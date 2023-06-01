@@ -2,12 +2,15 @@ import React from "react";
 import About from "./components/About";
 import Header from "./components/Header";
 
+import customTheme from "./customTheme";
+import { ThemeProvider } from "@emotion/react";
+
 const App = () => {
   return (
-    <React.Fragment>
+    <ThemeProvider theme={customTheme}>
       <Header />
       <About />
-    </React.Fragment>
+    </ThemeProvider>
   );
 };
 
