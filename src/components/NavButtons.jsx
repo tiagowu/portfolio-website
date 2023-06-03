@@ -9,11 +9,11 @@ const NavButtons = () => {
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
 
   const navigations = [
-    { id: 1, label: "About", href: "#about" },
-    { id: 2, label: "Education", href: "#education" },
-    { id: 3, label: "Projects", href: "#projects" },
-    { id: 4, label: "Skills", href: "#skills" },
-    { id: 5, label: "Contact", href: "#contact" },
+    { id: 1, label: "About" },
+    { id: 2, label: "Education" },
+    { id: 3, label: "Projects" },
+    { id: 4, label: "Skills" },
+    { id: 5, label: "Contact" },
   ];
 
   const [isDrawerOpen, setDrawerOpen] = useState(false);
@@ -22,8 +22,8 @@ const NavButtons = () => {
     setDrawerOpen(!isDrawerOpen);
   };
 
-  const handleNavClick = (href) => {
-    const element = document.querySelector(href);
+  const handleNavClick = (id) => {
+    const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     }
@@ -40,7 +40,15 @@ const NavButtons = () => {
         </>
       ) : (
         navigations.map((item) => (
-          <Button key={item.id} color="inherit" onClick={() => handleNavClick(item.href)}>
+          <Button
+            href={`#${item.label.toLowerCase()}`}
+            key={item.id}
+            color="inherit"
+            onClick={(e) => {
+              e.preventDefault();
+              handleNavClick(item.label.toLowerCase());
+            }}
+          >
             {`${item.id.toString().padStart(2, "0")}. ${item.label}`}
           </Button>
         ))
