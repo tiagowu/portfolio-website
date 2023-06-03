@@ -5,7 +5,7 @@ import { Container } from "@mui/material";
 const About = () => {
   return (
     <>
-      <Container sx={{ height: "100vh" }} id="about">
+      <Container sx={{ height: "100vh", paddingTop: "72px" }} id="about">
         About
       </Container>
     </>
