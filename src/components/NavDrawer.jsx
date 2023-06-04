@@ -20,10 +20,10 @@ const NavDrawer = ({ navigations, isDrawerOpen, toggleDrawer, handleNavClick }) 
     },
   }));
 
-  const handleClick = (href) => {
+  const handleClick = (id) => {
     toggleDrawer();
     setTimeout(() => {
-      handleNavClick(href);
+      handleNavClick(id);
     }, 100);
   };
 
@@ -31,7 +31,13 @@ const NavDrawer = ({ navigations, isDrawerOpen, toggleDrawer, handleNavClick }) 
     <StyledDrawer anchor="right" open={isDrawerOpen} onClose={toggleDrawer}>
       <List>
         {navigations.map((item) => (
-          <ListItem key={item.id} onClick={() => handleClick(item.href)}>
+          <ListItem
+            key={item.id}
+            onClick={(e) => {
+              e.preventDefault();
+              handleClick(item.label.toLowerCase());
+            }}
+          >
             <DrawerButton>
               <ListItemText primary={`${item.id.toString().padStart(2, "0")}. ${item.label}`} />
             </DrawerButton>
