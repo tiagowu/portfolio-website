@@ -25,8 +25,9 @@ const NavButtons = () => {
   const handleNavClick = (id) => {
     const element = document.getElementById(id);
     if (element) {
+      const url = `/#${id}`;
+      window.history.pushState(null, "", url);
       element.scrollIntoView({ behavior: "smooth" });
-      window.location.hash = id;
     }
   };
 
