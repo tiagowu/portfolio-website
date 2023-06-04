@@ -48,13 +48,19 @@ const About = () => {
     };
   }, [about, index, isTypingFinished]);
 
+  const renderText = () => {
+    const modifiedText = text
+      .replace(/viewProjects\(\)/, `<a href="#projects">viewProjects()</a>`)
+      .replace(/viewSkills\(\)/, `<a href="#skills">viewSkills()</a>`);
+    const htmlText = { __html: modifiedText };
+    return <pre dangerouslySetInnerHTML={htmlText} />;
+  };
+
   return (
     <>
       <Container sx={{ height: "100vh", paddingTop: "72px" }} id="about">
         About
-        <Box sx={{ width: 300 }}>
-          <pre>{about.substring(0, index)}</pre>
-        </Box>
+        <Box sx={{ width: 300 }}>{isTypingFinished ? renderText() : <pre>{about.substring(0, index)}</pre>}</Box>
       </Container>
     </>
   );
