@@ -1,8 +1,11 @@
-import React from "react";
-
-import { Container } from "@mui/material";
+import React, { useState, useEffect } from "react";
+import { Box, Container } from "@mui/material";
 
 const About = () => {
+  const [text, setText] = useState("");
+  const [index, setIndex] = useState(0);
+  const [isTypingFinished, setIsTypingFinished] = useState(false);
+
   const about = `class Tiago {
     constructor() {
       this.name = "Tiago Wu";
@@ -14,10 +17,44 @@ const About = () => {
       this.interests_and_hobbies = [];
     }\n}`;
 
+  useEffect(() => {
+    let typingInterval;
+
+    const startTyping = () => {
+      typingInterval = setInterval(() => {
+        if (index < about.length) {
+          setText((prevText) => prevText + about[index]);
+          setIndex((prevIndex) => prevIndex + 1);
+        } else {
+          clearInterval(typingInterval);
+          setIsTypingFinished(true);
+        }
+      }, 30);
+    };
+
+    startTyping();
+
+    if (isTypingFinished) {
+      setTimeout(() => {
+        setText("");
+        setIndex(0);
+        setIsTypingFinished(false);
+        startTyping();
+      }, 20000);
+    }
+
+    return () => {
+      clearInterval(typingInterval);
+    };
+  }, [about, index, isTypingFinished]);
+
   return (
     <>
       <Container sx={{ height: "100vh", paddingTop: "72px" }} id="about">
         About
+        <Box sx={{ width: 300 }}>
+          <pre>{about.substring(0, index)}</pre>
+        </Box>
       </Container>
     </>
   );
