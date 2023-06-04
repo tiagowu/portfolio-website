@@ -16,10 +16,10 @@ const NavButtons = () => {
     { id: 5, label: "Contact" },
   ];
 
-  const [isDrawerOpen, setDrawerOpen] = useState(false);
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
   const toggleDrawer = () => {
-    setDrawerOpen(!isDrawerOpen);
+    setIsDrawerOpen(!isDrawerOpen);
   };
 
   const handleNavClick = (id) => {
