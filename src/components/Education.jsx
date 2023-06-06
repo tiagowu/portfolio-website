@@ -1,11 +1,50 @@
 import coursesData from "../data/coursesData";
+import { ReactComponent as SBULogo } from "../assets/SBULogo.svg";
 
-import { Container, Table, TableBody, TableCell, TableHead, TableRow, tableCellClasses } from "@mui/material";
+import { Box, Container, Table, TableBody, TableCell, TableHead, TableRow, Typography, tableCellClasses } from "@mui/material";
 import { styled } from "@mui/system";
 
 const Education = () => {
   const StyledEducationContainer = styled(Container)(({ theme }) => ({
     paddingTop: "72px",
+  }));
+
+  const StyledEducationBox = styled(Box)(({ theme, index }) => ({
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    gap: "16px",
+    marginBottom: "16px",
+    // minWidth: "300px",
+    [theme.breakpoints.down("xs")]: {
+      flexDirection: "column",
+      whiteSpace: "nowrap",
+
+      textAlign: "center",
+    },
+    "& svg": {
+      width: "120px",
+      height: "120px",
+      [theme.breakpoints.down("sm")]: {
+        width: "96px",
+        height: "96px",
+      },
+    },
+    "& > div": {
+      display: "flex",
+      flexDirection: "column",
+      gap: "8px",
+      [theme.breakpoints.down("sm")]: {
+        gap: "4px",
+      },
+      "& p": {
+        fontSize: "16px",
+        [theme.breakpoints.down("sm")]: {
+          fontSize: "14px",
+        },
+      },
+    },
   }));
 
   const StyledTableContainer = styled(Container)(({ theme }) => ({
@@ -53,6 +92,14 @@ const Education = () => {
     <>
       <StyledEducationContainer id="education">
         Education
+        <StyledEducationBox>
+          <SBULogo />
+          <Box>
+            <Typography>Stony Brook University </Typography>
+            <Typography>Computer Science, B.S.</Typography>
+            <Typography>GPA: 3.83</Typography>
+          </Box>
+        </StyledEducationBox>
         <StyledTableContainer disableGutters>
           <StyledTable>
             <TableHead>
