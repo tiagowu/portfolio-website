@@ -97,7 +97,8 @@ const Education = () => {
           <Box>
             <Typography>Stony Brook University </Typography>
             <Typography>Computer Science, B.S.</Typography>
-            <Typography>GPA: 3.83</Typography>
+            <Typography>Exp. Grad: May 2024</Typography>
+            <Typography>Cumulative GPA: 3.83</Typography>
           </Box>
         </StyledEducationBox>
         <StyledTableContainer disableGutters>
