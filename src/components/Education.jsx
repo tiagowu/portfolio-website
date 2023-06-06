@@ -16,7 +16,6 @@ const Education = () => {
     justifyContent: "center",
     gap: "16px",
     marginBottom: "16px",
-    // minWidth: "300px",
     [theme.breakpoints.down("xs")]: {
       flexDirection: "column",
       whiteSpace: "nowrap",
