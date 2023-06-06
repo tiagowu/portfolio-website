@@ -27,8 +27,8 @@ const Education = () => {
       width: "120px",
       height: "120px",
       [theme.breakpoints.down("sm")]: {
-        width: "96px",
-        height: "96px",
+        maxWidth: "96px",
+        maxHeight: "96px",
       },
     },
     "& > div": {
