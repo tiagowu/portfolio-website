@@ -64,7 +64,7 @@ const Education = () => {
 
   const StyledTable = styled(Table)(({ theme }) => ({
     margin: "auto",
-    maxWidth: "600px",
+    maxWidth: "1000px",
   }));
 
   const StyledTableCell = styled(TableCell)(({ theme }) => ({
