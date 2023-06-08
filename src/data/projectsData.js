@@ -37,7 +37,7 @@ const projectsData = [
   {
     projectName: "MemAlloc",
     description:
-      "A dynamic memory allocator designed for the x86-64 computer architecture that utilizes a segregated free list and quick list to perform memory management functions such as malloc, free, realloc, and memalign, similar to those in the C programming language.",
+      "A dynamic memory allocator designed for the x86-64 computer architecture that utilizes a segregated free list and quick list to implement malloc, free, realloc, and memalign functions, similar to those in the C programming language.",
     completedOn: "Mar 2023",
     technologies: ["C"],
     githubLink: "",
