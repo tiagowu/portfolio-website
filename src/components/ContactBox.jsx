@@ -2,15 +2,15 @@ import { Box, Typography, Link } from "@mui/material";
 
 const ContactBox = ({ label, content, icon: Icon }) => {
   return (
-    <Box display="flex" flexDirection="column" alignItems="center" justifyContent="center" textAlign="center">
+    <Box display="flex" flexDirection="column" alignItems="center" justifyContent="center" textAlign="center" border="1px solid black" padding="16px">
       <Box display="flex" alignItems="center" justifyContent="center">
         <Typography variant="h6" mr={1}>
           {label}
         </Typography>
-        <Icon sx={{ fontSize: 40 }} />
+        <Icon sx={{ fontSize: 32 }} />
       </Box>
-      <Typography variant="h6" component="h3">
-        {content.startsWith("http") ? (
+      <Typography variant="h6" component="h3" whiteSpace="nowrap">
+        {label !== "Email" ? (
           <Link href={content} target="_blank" rel="noopener noreferrer">
             {content.substring(content.indexOf(".") + 1)}
           </Link>
