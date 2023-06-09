@@ -9,7 +9,7 @@ const ContactBox = ({ label, content, icon: Icon }) => {
         </Typography>
         <Icon sx={{ fontSize: 32 }} />
       </Box>
-      <Typography variant="h6" component="h3" whiteSpace="nowrap">
+      <Typography variant="h6" component="h3" whiteSpace={{ sm: "nowrap" }}>
         {label !== "Email" ? (
           <Link href={content} target="_blank" rel="noopener noreferrer">
             {content.substring(content.indexOf(".") + 1)}
