@@ -8,7 +8,7 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 
 const Contact = () => {
   return (
-    <Container id="contact" maxWidth={false} paddingTop="72px" textAlign="center">
+    <Container id="contact" maxWidth={false} sx={{ paddingTop: "72px", textAlign: "center" }}>
       <Typography variant="h4">Contact</Typography>
       <Box display="flex" justifyContent="center">
         <Box display="flex" flexDirection={{ xs: "column", sm: "row" }} justifyContent="center" padding="32px" border="1px solid black">
