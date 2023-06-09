@@ -24,7 +24,6 @@ const Projects = () => {
                 <Typography variant="caption" sx={{ marginTop: "12px" }}>
                   {project.description}
                 </Typography>
-
                 <Box>
                   <Divider orientation="vertical" />
                 </Box>
