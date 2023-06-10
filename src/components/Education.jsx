@@ -16,7 +16,7 @@ const Education = () => {
     justifyContent: "center",
     gap: "16px",
     marginBottom: "16px",
-    [theme.breakpoints.down("xs")]: {
+    [theme.breakpoints.down("sm")]: {
       flexDirection: "column",
       whiteSpace: "nowrap",
 
@@ -25,10 +25,6 @@ const Education = () => {
     "& svg": {
       width: "120px",
       height: "120px",
-      [theme.breakpoints.down("sm")]: {
-        maxWidth: "96px",
-        maxHeight: "96px",
-      },
     },
     "& > div": {
       display: "flex",
@@ -40,7 +36,7 @@ const Education = () => {
       "& p": {
         fontSize: "16px",
         [theme.breakpoints.down("sm")]: {
-          fontSize: "14px",
+          // fontSize: "14px",
         },
       },
     },
@@ -90,7 +86,9 @@ const Education = () => {
   return (
     <>
       <StyledEducationContainer id="education">
-        Education
+        <Typography variant="h4" align="center" paddingBottom="16px">
+          Education
+        </Typography>
         <StyledEducationBox>
           <SBULogo />
           <Box>
