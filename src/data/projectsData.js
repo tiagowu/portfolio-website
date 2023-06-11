@@ -1,4 +1,4 @@
-const projectsData = [
+export const projectsData = [
   {
     projectName: "Lunar System",
     description: "A menu-based course registration system featuring a serializable database that allows students to manage and view their courses.",
@@ -21,7 +21,7 @@ const projectsData = [
     description:
       "A minimalist weather application that enables users to view the weather of their current geolocation as well as any other location in the world.",
     completedOn: "Aug 2022",
-    technologies: ["HTML/CSS", "JavaScript"],
+    technologies: ["CSS", "HTML", "JavaScript"],
     githubLink: "",
     demoLink: "",
   },
@@ -45,12 +45,11 @@ const projectsData = [
   },
   {
     projectName: "Portfolio Website",
-    description: "A portfolio website built to let the world learn more about me through a collection of my experiences, projects, and skills.",
+    description:
+      "A portfolio website that aims to offer the world an in-depth understanding of my background, accomplishments, and expertise by showcasing a collection of my experiences, projects, and skills.",
     completedOn: "In Progress",
-    technologies: ["HTML/CSS", "Javascript"],
+    technologies: ["CSS", "HTML", "Javascript"],
     githubLink: "",
     demoLink: "",
   },
 ];
-
-export default projectsData;
