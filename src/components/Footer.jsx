@@ -1,11 +1,9 @@
-import NavButtons from "./NavButtons";
-
-import { Container } from "@mui/material";
+import { Container, Typography } from "@mui/material";
 
 const Footer = () => {
   return (
-    <Container sx={{ height: "300px", paddingTop: "72px" }} id="footer">
-      Footer
+    <Container id="footer" sx={{ textAlign: "center", height: "100px", pt: "36px" }}>
+      <Typography variant="h6">©2023 Tiago Wu</Typography>
     </Container>
   );
 };
