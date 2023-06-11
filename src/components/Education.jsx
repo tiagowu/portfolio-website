@@ -1,4 +1,4 @@
-import coursesData from "../data/coursesData";
+import { coursesData } from "../data/CoursesData";
 import { ReactComponent as SBULogo } from "../assets/SBULogo.svg";
 
 import { Box, Container, Table, TableBody, TableCell, TableHead, TableRow, Typography, tableCellClasses } from "@mui/material";
