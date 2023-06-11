@@ -1,4 +1,4 @@
-const coursesData = [
+export const coursesData = [
   {
     courseNumber: "CSE 214",
     courseName: "Data Structures",
@@ -72,5 +72,3 @@ const coursesData = [
     completed: true,
   },
 ];
-
-export default coursesData;
