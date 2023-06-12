@@ -22,8 +22,8 @@ export const projectsData = [
       "A minimalist weather application that enables users to view the weather of their current geolocation as well as any other location in the world.",
     completedOn: "Aug 2022",
     technologies: ["CSS", "HTML", "JavaScript"],
-    githubLink: "",
-    demoLink: "",
+    githubLink: "https://github.com/tiagowu/weather-app",
+    demoLink: "https://tiagowu.github.io/weather-app",
   },
   {
     projectName: "TransforMatrix",
@@ -49,7 +49,7 @@ export const projectsData = [
       "A portfolio website that aims to offer the world an in-depth understanding of my background, accomplishments, and expertise by showcasing a collection of my experiences, projects, and skills.",
     completedOn: "In Progress",
     technologies: ["CSS", "HTML", "Javascript"],
-    githubLink: "",
+    githubLink: "https://github.com/tiagowu/portfolio-website",
     demoLink: "",
   },
 ];
