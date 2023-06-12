@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 649 295">
-<rect fill="#3770b3" x="-30.11" y="-25.12" transform="translate(50.15,44.12) rotate(0.1)" width="60.22" height="50.24" rx="13.03"/>
-<path fill="#3770b3" d="
+<rect fill="#34528e" x="-30.11" y="-25.12" transform="translate(50.15,44.12) rotate(0.1)" width="60.22" height="50.24" rx="13.03"/>
+<path fill="#34528e" d="
   M 153.06 69.81
   Q 153.39 166.28 153.25 262.75
   Q 153.23 273.07 145.81 276.52
@@ -26,7 +26,7 @@
   A 0.50 0.50 0.0 0 0 153.06 69.81
   Z"
 />
-<path fill="#3770b3" d="
+<path fill="#34528e" d="
   M 276.28 24.50
   Q 280.33 18.77 287.50 18.86
   Q 296.82 18.97 306.14 18.99
@@ -45,7 +45,7 @@
   Q 273.10 28.98 276.28 24.50
   Z"
 />
-<path fill="#3770b3" d="
+<path fill="#34528e" d="
   M 531.75 185.42
   Q 554.90 109.23 578.50 32.13
   Q 580.51 25.56 582.47 23.24
