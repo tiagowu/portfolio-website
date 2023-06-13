@@ -7,7 +7,7 @@ const ContactBox = ({ label, content, icon: Icon }) => {
         <Typography variant="h6" mr={1}>
           {label}
         </Typography>
-        <Icon sx={{ fontSize: 32 }} />
+        <Icon />
       </Box>
       <Typography variant="h6" component="h3" whiteSpace={{ sm: "nowrap" }}>
         {label !== "Email" ? (

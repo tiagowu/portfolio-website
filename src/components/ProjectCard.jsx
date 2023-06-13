@@ -1,9 +1,7 @@
 import LinkButton from "./LinkButton";
-import { iconsData } from "../data/IconsData";
+import { skillIcons, infoIcons } from "../data/IconsData";
 
 import { Box, Card, CardContent, Divider, Typography } from "@mui/material";
-import GitHubIcon from "@mui/icons-material/GitHub";
-import DemoIcon from "@mui/icons-material/OpenInNew";
 
 const ProjectCard = ({ project }) => {
   return (
@@ -22,9 +20,9 @@ const ProjectCard = ({ project }) => {
         <Box sx={{ display: "flex", justifyContent: "space-between", mt: "auto" }}>
           <Box sx={{ display: "flex", flexDirection: "row", alignItems: "center", height: "48px", gap: "16px" }}>
             {project.technologies.map((technology, index) =>
-              iconsData.hasOwnProperty(technology.toLowerCase()) ? (
+              skillIcons.hasOwnProperty(technology.toLowerCase()) ? (
                 <Box key={index} display="flex" alignItems="center" sx={{ fontSize: "32px" }}>
-                  {iconsData[technology.toLowerCase()]}
+                  {skillIcons[technology.toLowerCase()]}
                 </Box>
               ) : (
                 <Typography key={index}>{technology}</Typography>
@@ -32,8 +30,8 @@ const ProjectCard = ({ project }) => {
             )}
           </Box>
           <Box sx={{ display: "flex", flexDirection: "row", alignItems: "center", gap: "8px" }}>
-            {project.githubLink && <LinkButton link={project.githubLink} icon={GitHubIcon} iconProps={{ fontSize: "24px" }} />}
-            {project.demoLink && <LinkButton link={project.demoLink} icon={DemoIcon} iconProps={{ fontSize: "24px" }} />}
+            {project.githubLink && <LinkButton link={project.githubLink} icon={() => infoIcons.github} iconProps={{ fontSize: "24px" }} />}
+            {project.demoLink && <LinkButton link={project.demoLink} icon={() => infoIcons.demo} iconProps={{ fontSize: "24px" }} />}
           </Box>
         </Box>
       </CardContent>

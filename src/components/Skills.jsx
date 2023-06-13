@@ -1,5 +1,4 @@
-import React from "react";
-import { iconsData } from "../data/IconsData";
+import { skillIcons } from "../data/IconsData";
 import { skillsData } from "../data/SkillsData";
 
 import { Container, Grid, Typography } from "@mui/material";
@@ -19,7 +18,7 @@ const Skills = () => {
             <Grid container spacing={4} justifyContent="center" alignItems="center">
               {section.skills.map((skill, skillIndex) => (
                 <Grid item key={skillIndex} sx={{ fontSize: "72px" }}>
-                  {iconsData[skill.toLowerCase()]}
+                  {skillIcons[skill.toLowerCase()]}
                 </Grid>
               ))}
             </Grid>
