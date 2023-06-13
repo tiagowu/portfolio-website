@@ -1,7 +1,9 @@
+import LinkButton from "./LinkButton";
+
 import { projectsData } from "../data/ProjectsData";
 import { iconsData } from "../data/IconsData";
 
-import { Box, Card, CardContent, Container, Divider, Grid, IconButton, Typography } from "@mui/material";
+import { Box, Card, CardContent, Container, Divider, Grid, Typography } from "@mui/material";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import DemoIcon from "@mui/icons-material/OpenInNew";
 
@@ -40,21 +42,9 @@ const Projects = () => {
                       )
                     )}
                   </Box>
-                  <Box sx={{ display: "flex", flexDirection: "row", alignItems: "center" }}>
-                    {project.githubLink && (
-                      <a href={project.githubLink} target="_blank" rel="noopener noreferrer">
-                        <IconButton disableRipple sx={{ color: "black" }}>
-                          <GitHubIcon sx={{ fontSize: "32px" }} />
-                        </IconButton>
-                      </a>
-                    )}
-                    {project.demoLink && (
-                      <a href={project.demoLink} target="_blank" rel="noopener noreferrer">
-                        <IconButton disableRipple sx={{ color: "black" }}>
-                          <DemoIcon sx={{ fontSize: "32px" }} />
-                        </IconButton>
-                      </a>
-                    )}
+                  <Box sx={{ display: "flex", flexDirection: "row", alignItems: "center", gap: "8px" }}>
+                    {project.githubLink && <LinkButton link={project.githubLink} icon={GitHubIcon} iconProps={{ fontSize: "24px" }} />}
+                    {project.demoLink && <LinkButton link={project.demoLink} icon={DemoIcon} iconProps={{ fontSize: "24px" }} />}
                   </Box>
                 </Box>
               </CardContent>

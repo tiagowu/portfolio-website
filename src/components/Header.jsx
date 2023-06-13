@@ -1,7 +1,8 @@
 import NavBar from "./NavBar";
+import LinkButton from "./LinkButton";
 import { ReactComponent as Panda } from "../assets/Panda.svg";
 
-import { Box, Container, IconButton, Typography } from "@mui/material";
+import { Box, Container, Typography } from "@mui/material";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import ResumeIcon from "@mui/icons-material/Description";
@@ -27,22 +28,10 @@ const Header = () => {
           <Typography sx={{ typography: { xs: "h6" }, color: "lightgray" }}>
             Third-year Computer Science student at Stony Brook University seeking a career in software development.
           </Typography>
-          <Box display="flex" justifyContent="center" alignItems="center" flexDirection="row">
-            <a href="https://www.github.com/tiagowu" target="_blank" rel="noopener noreferrer">
-              <IconButton disableRipple>
-                <GitHubIcon sx={{ fontSize: "32px" }} />
-              </IconButton>
-            </a>
-            <a href="https://www.linkedin.com/in/tiago-wu/" target="_blank" rel="noopener noreferrer">
-              <IconButton disableRipple>
-                <LinkedInIcon sx={{ fontSize: "32px" }} />
-              </IconButton>
-            </a>
-            <a href="" target="_blank" rel="noopener noreferrer">
-              <IconButton disableRipple>
-                <ResumeIcon sx={{ fontSize: "32px" }} />
-              </IconButton>
-            </a>
+          <Box display="flex" justifyContent="center" alignItems="center" flexDirection="row" gap="12px">
+            <LinkButton link="https://www.github.com/tiagowu" icon={GitHubIcon} iconProps={{ fontSize: "32px" }} />
+            <LinkButton link="https://www.linkedin.com/in/tiago-wu/" icon={LinkedInIcon} iconProps={{ fontSize: "32px" }} />
+            <LinkButton link="https://www.linkedin.com/in/tiago-wu/" icon={ResumeIcon} iconProps={{ fontSize: "32px" }} />
           </Box>
         </Box>
       </Box>
