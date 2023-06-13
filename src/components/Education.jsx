@@ -86,7 +86,7 @@ const Education = () => {
   return (
     <>
       <StyledEducationContainer id="education">
-        <Typography variant="h4" align="center" paddingBottom="16px">
+        <Typography variant="h4" align="center" paddingBottom="32px">
           Education
         </Typography>
         <StyledEducationBox>
