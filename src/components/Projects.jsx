@@ -16,7 +16,7 @@ const Projects = () => {
       <Grid container spacing={4} justifyContent="center">
         {reversedProjectsData.map((project, index) => (
           <Grid item key={index} sx={{ alignItems: "center", justifyContent: "center" }}>
-            <Card sx={{ display: "flex", flexDirection: "column", maxWidth: "480px", minHeight: "240px", height: "100%" }}>
+            <Card sx={{ display: "flex", flexDirection: "column", maxWidth: "440px", minHeight: "240px", height: "100%" }}>
               <CardContent sx={{ display: "flex", flexDirection: "column", height: "100%" }}>
                 <Typography variant="caption" sx={{ margin: "8px" }}>
                   {project.completedOn}
@@ -28,7 +28,7 @@ const Projects = () => {
                 <Typography variant="body1" mt="12px" mb="12px">
                   {project.description}
                 </Typography>
-                <Box sx={{ display: "flex", justifyContent: "space-between" }}>
+                <Box sx={{ display: "flex", justifyContent: "space-between", mt: "auto" }}>
                   <Box sx={{ display: "flex", flexDirection: "row", alignItems: "center", height: "48px", gap: "16px" }}>
                     {project.technologies.map((technology, index) =>
                       iconsData.hasOwnProperty(technology.toLowerCase()) ? (
