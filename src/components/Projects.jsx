@@ -1,11 +1,7 @@
-import LinkButton from "./LinkButton";
-
+import ProjectCard from "./ProjectCard";
 import { projectsData } from "../data/ProjectsData";
-import { iconsData } from "../data/IconsData";
 
-import { Box, Card, CardContent, Container, Divider, Grid, Typography } from "@mui/material";
-import GitHubIcon from "@mui/icons-material/GitHub";
-import DemoIcon from "@mui/icons-material/OpenInNew";
+import { Container, Grid, Typography } from "@mui/material";
 
 const Projects = () => {
   const reversedProjectsData = [...projectsData].reverse();
@@ -18,37 +14,7 @@ const Projects = () => {
       <Grid container spacing={4} justifyContent="center">
         {reversedProjectsData.map((project, index) => (
           <Grid item key={index} sx={{ alignItems: "center", justifyContent: "center" }}>
-            <Card sx={{ display: "flex", flexDirection: "column", maxWidth: "440px", minHeight: "240px", height: "100%" }}>
-              <CardContent sx={{ display: "flex", flexDirection: "column", height: "100%" }}>
-                <Typography variant="caption" sx={{ margin: "8px" }}>
-                  {project.completedOn}
-                </Typography>
-                <Typography variant="h5" sx={{ textAlign: "center", mb: "12px" }}>
-                  {project.projectName}
-                </Typography>
-                <Divider />
-                <Typography variant="body1" mt="12px" mb="12px">
-                  {project.description}
-                </Typography>
-                <Box sx={{ display: "flex", justifyContent: "space-between", mt: "auto" }}>
-                  <Box sx={{ display: "flex", flexDirection: "row", alignItems: "center", height: "48px", gap: "16px" }}>
-                    {project.technologies.map((technology, index) =>
-                      iconsData.hasOwnProperty(technology.toLowerCase()) ? (
-                        <Box key={index} display="flex" alignItems="center" sx={{ fontSize: "32px" }}>
-                          {iconsData[technology.toLowerCase()]}
-                        </Box>
-                      ) : (
-                        <Typography key={index}>{technology}</Typography>
-                      )
-                    )}
-                  </Box>
-                  <Box sx={{ display: "flex", flexDirection: "row", alignItems: "center", gap: "8px" }}>
-                    {project.githubLink && <LinkButton link={project.githubLink} icon={GitHubIcon} iconProps={{ fontSize: "24px" }} />}
-                    {project.demoLink && <LinkButton link={project.demoLink} icon={DemoIcon} iconProps={{ fontSize: "24px" }} />}
-                  </Box>
-                </Box>
-              </CardContent>
-            </Card>
+            <ProjectCard project={project} />
           </Grid>
         ))}
       </Grid>
