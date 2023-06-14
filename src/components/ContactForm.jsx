@@ -1,16 +1,21 @@
 import { useState } from "react";
+
 import { Box, Button, TextField, Typography } from "@mui/material";
 import emailjs from "emailjs-com";
 
 const SERVICE_ID = process.env.REACT_APP_EMAILJS_SERVICE_ID;
 const TEMPLATE_ID = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
-const USER_ID = process.env.REACT_APP_EMAILJS_USER_ID;
+const PUBLIC_KEY = process.env.REACT_APP_EMAILJS_PUBLIC_KEY;
 
 const ContactForm = () => {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
-  const [isEmailSent, setIsEmailSent] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  const { name, email, message } = formData;
+  const [isFormSent, setIsFormSent] = useState(false);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -24,37 +29,38 @@ const ContactForm = () => {
           from_email: email,
           message: message,
         },
-        USER_ID
+        PUBLIC_KEY
       )
       .then(() => {
-        setName("");
-        setEmail("");
-        setMessage("");
-        setIsEmailSent(true);
+        setFormData({
+          name: "",
+          email: "",
+          message: "",
+        });
+        setIsFormSent(true);
       })
       .catch((error) => {
         console.error("Error sending email:", error);
       });
   };
 
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      [name]: value,
+    }));
+  };
+
   return (
-    <Box textAlign="center">
+    <Box align="center">
       <Typography variant="h5">Contact Me</Typography>
       <form onSubmit={handleSubmit}>
-        <TextField label="Name" fullWidth margin="normal" value={name} onChange={(e) => setName(e.target.value)} required />
-        <TextField label="Email" fullWidth margin="normal" value={email} onChange={(e) => setEmail(e.target.value)} required />
-        <TextField
-          label="Message"
-          fullWidth
-          margin="normal"
-          multiline
-          rows={4}
-          value={message}
-          onChange={(e) => setMessage(e.target.value)}
-          required
-        />
-        {isEmailSent && (
-          <Typography variant="body1" pb="8px">
+        <TextField label="Name" fullWidth margin="normal" name="name" value={name} onChange={handleChange} required />
+        <TextField label="Email" fullWidth margin="normal" name="email" value={email} onChange={handleChange} required />
+        <TextField label="Message" fullWidth margin="normal" multiline rows={4} name="message" value={message} onChange={handleChange} required />
+        {isFormSent && (
+          <Typography variant="body1" color="green" pb={1}>
             Message successfully sent!
           </Typography>
         )}
