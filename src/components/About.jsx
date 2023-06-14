@@ -8,11 +8,11 @@ const About = () => {
   };
 
   return (
-    <Container id="about" sx={{ paddingTop: "72px" }}>
-      <Typography variant="h4" align="center" pb="32px">
+    <Container id="about">
+      <Typography variant="h4" align="center" pt={9} pb={4}>
         About
       </Typography>
-      <Box display="flex" flexDirection="column" margin="auto" maxWidth="720px" gap="16px">
+      <Box display="flex" flexDirection="column" margin="auto" maxWidth={720} gap={2}>
         {renderAboutText()}
       </Box>
     </Container>
