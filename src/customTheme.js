@@ -10,6 +10,36 @@ const customTheme = createTheme({
       xl: 1920,
     },
   },
+  components: {
+    MuiContainer: {
+      styleOverrides: {
+        root: {
+          backgroundColor: "#232830",
+        },
+      },
+    },
+    MuiTextField: {
+      styleOverrides: {
+        root: {
+          "& .MuiInputBase-input": {
+            color: "white",
+          },
+        },
+      },
+    },
+    MuiTypography: {
+      styleOverrides: {
+        root: {
+          color: "white",
+        },
+      },
+    },
+  },
+  palette: {
+    primary: {
+      main: "#3770B3",
+    },
+  },
 });
 
 export default customTheme;
