@@ -1,8 +1,10 @@
-import { Box, Typography, Link } from "@mui/material";
+import { Box, Typography, Link, useTheme } from "@mui/material";
 
 const ContactBox = ({ label, content, icon: Icon }) => {
+  const theme = useTheme();
+
   return (
-    <Box display="flex" flexDirection="column" alignItems="center" justifyContent="center" textAlign="center" border="1px solid black" padding="16px">
+    <Box display="flex" flexDirection="column" p="16px" border={`1px solid ${theme.palette.primary.main}`} borderRadius={1}>
       <Box display="flex" alignItems="center" justifyContent="center">
         <Typography variant="h6" mr={1}>
           {label}
