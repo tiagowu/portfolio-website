@@ -1,15 +1,22 @@
-import React from "react";
+import { IconButton, Link } from "@mui/material";
+import { styled } from "@mui/system";
 
-import { IconButton } from "@mui/material";
-
-const LinkButton = ({ link, icon: IconComponent, iconProps }) => {
+const LinkButton = ({ link, icon: Icon, iconProps }) => {
   return (
-    <a href={link} target="_blank" rel="noopener noreferrer" style={{ height: "32px" }}>
-      <IconButton disableRipple sx={{ backgroundColor: "blue", color: "white", borderRadius: "8px", padding: "4px" }}>
-        <IconComponent sx={{ fontSize: iconProps.fontSize }} />
-      </IconButton>
-    </a>
+    <Link href={link} target="_blank" rel="noopener noreferrer">
+      <StyledButton disableRipple>
+        <Icon sx={{ fontSize: iconProps.fontSize }} />
+      </StyledButton>
+    </Link>
   );
 };
 
 export default LinkButton;
+
+/* Styled Components */
+const StyledButton = styled(IconButton)(({ theme }) => ({
+  backgroundColor: theme.palette.primary.main,
+  color: "white",
+  borderRadius: 8,
+  padding: 4,
+}));
