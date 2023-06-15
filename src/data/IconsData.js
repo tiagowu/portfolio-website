@@ -22,9 +22,9 @@ export const skillIcons = {
 };
 
 export const infoIcons = {
-  email: <EmailIcon />,
-  github: <GitHubIcon />,
-  linkedin: <LinkedInIcon />,
-  resume: <ResumeIcon />,
-  demo: <DemoIcon />,
+  email: EmailIcon,
+  github: GitHubIcon,
+  linkedin: LinkedInIcon,
+  resume: ResumeIcon,
+  demo: DemoIcon,
 };
