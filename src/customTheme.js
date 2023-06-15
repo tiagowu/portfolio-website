@@ -11,10 +11,21 @@ const customTheme = createTheme({
     },
   },
   components: {
-    MuiContainer: {
+    MuiFormLabel: {
       styleOverrides: {
         root: {
-          backgroundColor: "#232830",
+          color: "white",
+        },
+      },
+    },
+    MuiLink: {
+      styleOverrides: {
+        root: {
+          color: "primary",
+          textDecoration: "underline",
+          "&:hover": {
+            color: "none",
+          },
         },
       },
     },
@@ -23,6 +34,21 @@ const customTheme = createTheme({
         root: {
           "& .MuiInputBase-input": {
             color: "white",
+          },
+          "& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline": {
+            borderColor: "#3770B3",
+            borderWidth: "2px",
+          },
+          "& .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline": {
+            borderColor: "#3770B3",
+          },
+          "& .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline": {
+            borderColor: "#3770B3",
+          },
+          "& .MuiOutlinedInput-input:-webkit-autofill": {
+            WebkitTextFillColor: "white",
+            WebkitBackgroundClip: "text",
+            backgroundClip: "text !important",
           },
         },
       },
