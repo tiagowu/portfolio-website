@@ -1,13 +1,10 @@
 import { useState } from "react";
+import { SERVICE_ID, TEMPLATE_ID, PUBLIC_KEY } from "../config";
 
 import { Box, Button, TextField, Typography } from "@mui/material";
 import { styled } from "@mui/system";
 
 import emailjs from "emailjs-com";
-
-const SERVICE_ID = process.env.REACT_APP_EMAILJS_SERVICE_ID;
-const TEMPLATE_ID = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
-const PUBLIC_KEY = process.env.REACT_APP_EMAILJS_PUBLIC_KEY;
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
