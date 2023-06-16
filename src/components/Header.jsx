@@ -39,6 +39,7 @@ const Header = () => {
   );
 };
 
+/* Styled Components */
 const HeaderContainer = styled(Container)(() => ({
   display: "flex",
   alignItems: "center",
