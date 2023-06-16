@@ -4,10 +4,10 @@ import { styled } from "@mui/system";
 const ContactBox = ({ label, content, icon: Icon }) => {
   return (
     <StyledBox>
-      <Header>
+      <Label>
         <Typography variant="h6">{label}</Typography>
         {Icon && <Icon />}
-      </Header>
+      </Label>
       <Link href={label !== "Email" ? content : `mailto:${content}`} variant="h6" noWrap>
         {label !== "Email" ? content.substring(content.indexOf(".") + 1) : content}
       </Link>
@@ -24,11 +24,11 @@ const StyledBox = styled(Box)(({ theme }) => ({
   borderRadius: 4,
 }));
 
-const Header = styled(Box)(({ theme }) => ({
+const Label = styled(Box)(({ theme }) => ({
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
-  marginRight: theme.spacing(1),
+  gap: theme.spacing(1),
 }));
 
 export default ContactBox;
