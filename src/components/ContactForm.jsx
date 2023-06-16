@@ -56,8 +56,8 @@ const ContactForm = () => {
     <Box align="center">
       <Typography variant="h5">Contact Me</Typography>
       <form onSubmit={handleSubmit}>
-        <TextField label="Name" fullWidth margin="normal" name="name" value={name} onChange={handleChange} required />
-        <TextField label="Email" fullWidth margin="normal" name="email" value={email} onChange={handleChange} required />
+        <TextField label="Name" fullWidth margin="normal" name="name" value={name} onChange={handleChange} autoComplete="new-password" required />
+        <TextField label="Email" fullWidth margin="normal" name="email" value={email} onChange={handleChange} autoComplete="new-password" required />
         <TextField label="Message" fullWidth margin="normal" multiline rows={4} name="message" value={message} onChange={handleChange} required />
         {isFormSent && (
           <Typography variant="body1" color="green" pb={1}>
