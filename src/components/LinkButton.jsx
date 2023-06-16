@@ -11,8 +11,6 @@ const LinkButton = ({ link, icon: Icon, iconProps }) => {
   );
 };
 
-export default LinkButton;
-
 /* Styled Components */
 const StyledButton = styled(IconButton)(({ theme }) => ({
   backgroundColor: theme.palette.primary.main,
@@ -20,3 +18,5 @@ const StyledButton = styled(IconButton)(({ theme }) => ({
   borderRadius: 8,
   padding: 4,
 }));
+
+export default LinkButton;
