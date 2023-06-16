@@ -1,27 +1,34 @@
-import { Box, Typography, Link, useTheme } from "@mui/material";
+import { Box, Typography, Link } from "@mui/material";
+import { styled } from "@mui/system";
 
 const ContactBox = ({ label, content, icon: Icon }) => {
-  const theme = useTheme();
-
   return (
-    <Box display="flex" flexDirection="column" p="16px" border={`1px solid ${theme.palette.primary.main}`} borderRadius={1}>
-      <Box display="flex" alignItems="center" justifyContent="center">
-        <Typography variant="h6" mr={1}>
-          {label}
-        </Typography>
-        <Icon />
-      </Box>
-      <Typography variant="h6" component="h3" whiteSpace={{ sm: "nowrap" }}>
-        {label !== "Email" ? (
-          <Link href={content} target="_blank" rel="noopener noreferrer">
-            {content.substring(content.indexOf(".") + 1)}
-          </Link>
-        ) : (
-          <Link href={`mailto:${content}`}>{content}</Link>
-        )}
-      </Typography>
-    </Box>
+    <StyledBox>
+      <Header>
+        <Typography variant="h6">{label}</Typography>
+        {Icon && <Icon />}
+      </Header>
+      <Link href={label !== "Email" ? content : `mailto:${content}`} variant="h6" noWrap>
+        {label !== "Email" ? content.substring(content.indexOf(".") + 1) : content}
+      </Link>
+    </StyledBox>
   );
 };
+
+/* Styled Components */
+const StyledBox = styled(Box)(({ theme }) => ({
+  display: "flex",
+  flexDirection: "column",
+  padding: theme.spacing(2),
+  border: `2px solid ${theme.palette.primary.main}`,
+  borderRadius: 4,
+}));
+
+const Header = styled(Box)(({ theme }) => ({
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  marginRight: theme.spacing(1),
+}));
 
 export default ContactBox;
