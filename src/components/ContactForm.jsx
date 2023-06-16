@@ -1,6 +1,8 @@
 import { useState } from "react";
 
 import { Box, Button, TextField, Typography } from "@mui/material";
+import { styled } from "@mui/system";
+
 import emailjs from "emailjs-com";
 
 const SERVICE_ID = process.env.REACT_APP_EMAILJS_SERVICE_ID;
@@ -15,9 +17,9 @@ const ContactForm = () => {
   });
 
   const { name, email, message } = formData;
-  const [isFormSent, setIsFormSent] = useState(false);
+  const [isFormSubmitted, setIsFormSubmitted] = useState(false);
 
-  const handleSubmit = (event) => {
+  const handleFormSubmit = (event) => {
     event.preventDefault();
 
     emailjs
@@ -37,7 +39,7 @@ const ContactForm = () => {
           email: "",
           message: "",
         });
-        setIsFormSent(true);
+        setIsFormSubmitted(true);
       })
       .catch((error) => {
         console.error("Error sending email:", error);
@@ -53,23 +55,38 @@ const ContactForm = () => {
   };
 
   return (
-    <Box align="center">
+    <ContactFormWrapper>
       <Typography variant="h5">Contact Me</Typography>
-      <form onSubmit={handleSubmit}>
-        <TextField label="Name" fullWidth margin="normal" name="name" value={name} onChange={handleChange} autoComplete="new-password" required />
-        <TextField label="Email" fullWidth margin="normal" name="email" value={email} onChange={handleChange} autoComplete="new-password" required />
-        <TextField label="Message" fullWidth margin="normal" multiline rows={4} name="message" value={message} onChange={handleChange} required />
-        {isFormSent && (
-          <Typography variant="body1" color="green" pb={1}>
-            Message successfully sent!
-          </Typography>
-        )}
-        <Button variant="contained" color="primary" type="submit">
+      <form onSubmit={handleFormSubmit}>
+        <ContactFormInput label="Name" margin="normal" name="name" value={name} onChange={handleChange} autoComplete="new-password" required />
+        <ContactFormInput label="Email" margin="normal" name="email" value={email} onChange={handleChange} autoComplete="new-password" required />
+        <ContactFormInput label="Message" margin="normal" name="message" value={message} onChange={handleChange} multiline rows={4} required />
+        {isFormSubmitted && <ContactFormMessage variant="body1">Message successfully sent!</ContactFormMessage>}
+        <ContactFormButton variant="contained" type="submit">
           Submit
-        </Button>
+        </ContactFormButton>
       </form>
-    </Box>
+    </ContactFormWrapper>
   );
 };
+
+/* Styled Components */
+const ContactFormWrapper = styled(Box)({
+  textAlign: "center",
+});
+
+const ContactFormInput = styled(TextField)(({ theme }) => ({
+  width: "100%",
+  marginBottom: theme.spacing(1),
+}));
+
+const ContactFormMessage = styled(Typography)(({ theme }) => ({
+  color: "green",
+  paddingBottom: theme.spacing(1),
+}));
+
+const ContactFormButton = styled(Button)(({ theme }) => ({
+  marginTop: theme.spacing(1),
+}));
 
 export default ContactForm;
