@@ -1,22 +1,40 @@
 import { aboutData } from "../data/AboutData";
 
 import { Box, Container, Typography } from "@mui/material";
+import { styled } from "@mui/system";
 
 const About = () => {
-  const renderAboutText = () => {
-    return aboutData.map((text, index) => <Typography key={index}>{text}</Typography>);
-  };
-
   return (
-    <Container id="about">
-      <Typography variant="h4" align="center" pt={9} pb={4}>
-        About
-      </Typography>
-      <Box display="flex" flexDirection="column" margin="auto" maxWidth={720} gap={2}>
-        {renderAboutText()}
-      </Box>
-    </Container>
+    <AboutContainer id="about">
+      <AboutTitle variant="h4">About</AboutTitle>
+      <AboutContentBox>
+        {aboutData.map((text, index) => (
+          <Typography variant="body1" key={index}>
+            {text}
+          </Typography>
+        ))}
+      </AboutContentBox>
+    </AboutContainer>
   );
 };
+
+/* Styled Components */
+const AboutContainer = styled(Container)({
+  width: "100%",
+});
+
+const AboutTitle = styled(Typography)({
+  textAlign: "center",
+  paddingBottom: 32,
+  paddingTop: 72,
+});
+
+const AboutContentBox = styled(Box)({
+  display: "flex",
+  flexDirection: "column",
+  margin: "auto",
+  maxWidth: 720,
+  gap: 16,
+});
 
 export default About;
