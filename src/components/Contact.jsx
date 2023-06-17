@@ -3,6 +3,7 @@ import ContactForm from "./ContactForm";
 import { infoIcons } from "../data/IconsData";
 
 import { Box, Container, Typography } from "@mui/material";
+import { styled } from "@mui/system";
 
 const contactInfo = [
   { label: "Email", content: "tiagowu12@gmail.com", icon: infoIcons.email },
@@ -12,30 +13,59 @@ const contactInfo = [
 
 const Contact = () => {
   return (
-    <Container id="contact" maxWidth={false}>
-      <Typography variant="h4" align="center" pt={9} pb={4}>
-        Contact
-      </Typography>
-      <Box margin="auto" maxWidth={1000}>
-        <Box
-          display="flex"
-          flexDirection={{ xs: "column", sm: "row" }}
-          justifyContent="center"
-          p={4}
-          border={2}
-          borderRadius={4}
-          borderColor="primary.main"
-        >
+    <StyledContainer id="contact">
+      <StyledTitle variant="h4">Contact</StyledTitle>
+      <StyledWrapper>
+        <StyledFormBox>
           <ContactForm />
-          <Box display="flex" flexDirection="column" align="center" pl={{ sm: "16px" }} mt={6} gap={4}>
+          <StyledInfoBox>
             {contactInfo.map(({ label, content, icon }) => (
               <ContactBox key={label} label={label} content={content} icon={icon} />
             ))}
-          </Box>
-        </Box>
-      </Box>
-    </Container>
+          </StyledInfoBox>
+        </StyledFormBox>
+      </StyledWrapper>
+    </StyledContainer>
   );
 };
+
+/* Styled Components */
+const StyledContainer = styled(Container)({
+  width: "100%",
+});
+
+const StyledTitle = styled(Typography)(({ theme }) => ({
+  textAlign: "center",
+  paddingBottom: theme.spacing(4),
+  paddingTop: theme.spacing(9),
+}));
+
+const StyledWrapper = styled(Box)({
+  margin: "auto",
+  maxWidth: 1000,
+});
+
+const StyledFormBox = styled(Box)(({ theme }) => ({
+  display: "flex",
+  flexDirection: "column",
+  justifyContent: "center",
+  padding: theme.spacing(4),
+  border: `2px solid ${theme.palette.primary.main}`,
+  borderRadius: 4,
+  [theme.breakpoints.up("sm")]: {
+    flexDirection: "row",
+  },
+}));
+
+const StyledInfoBox = styled(Box)(({ theme }) => ({
+  display: "flex",
+  flexDirection: "column",
+  textAlign: "center",
+  marginTop: theme.spacing(6),
+  gap: theme.spacing(2),
+  [theme.breakpoints.up("sm")]: {
+    paddingLeft: theme.spacing(2),
+  },
+}));
 
 export default Contact;
