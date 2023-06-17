@@ -7,7 +7,7 @@ import { Box, Container, Typography } from "@mui/material";
 import { styled } from "@mui/system";
 
 const Header = () => {
-  const buttons = [
+  const buttonsInfo = [
     { link: "https://www.github.com/tiagowu", icon: infoIcons.github },
     { link: "https://www.linkedin.com/in/tiago-wu/", icon: infoIcons.linkedin },
     { link: "https://www.linkedin.com/in/tiago-wu/", icon: infoIcons.resume },
@@ -16,25 +16,27 @@ const Header = () => {
   return (
     <HeaderContainer maxWidth={false}>
       <NavBar />
-      <ContentBox>
-        <LogoBox>
+      <HeaderContent>
+        <HeaderLogo>
           <Panda />
-        </LogoBox>
-        <TextBox>
+        </HeaderLogo>
+        <HeaderText>
           <Typography variant="h4" sx={{ typography: { sm: "h3" } }}>
             Hello!
           </Typography>
           <Typography variant="h4" sx={{ typography: { sm: "h3" } }}>
             I am Tiago Wu.
           </Typography>
-          <Subtitle variant="h6">Third-year Computer Science student at Stony Brook University seeking a career in software development.</Subtitle>
-          <ButtonContainer>
-            {buttons.map((button, index) => (
+          <HeaderSubtext variant="h6">
+            Third-year Computer Science student at Stony Brook University seeking a career in software development.
+          </HeaderSubtext>
+          <HeaderButtons>
+            {buttonsInfo.map((button, index) => (
               <LinkButton key={index} link={button.link} icon={button.icon} iconProps={{ fontSize: 32 }} />
             ))}
-          </ButtonContainer>
-        </TextBox>
-      </ContentBox>
+          </HeaderButtons>
+        </HeaderText>
+      </HeaderContent>
     </HeaderContainer>
   );
 };
@@ -47,7 +49,7 @@ const HeaderContainer = styled(Container)(() => ({
   paddingTop: 72,
 }));
 
-const ContentBox = styled(Box)(({ theme }) => ({
+const HeaderContent = styled(Box)(({ theme }) => ({
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
@@ -61,7 +63,7 @@ const ContentBox = styled(Box)(({ theme }) => ({
   },
 }));
 
-const LogoBox = styled(Box)(({ theme }) => ({
+const HeaderLogo = styled(Box)(({ theme }) => ({
   minWidth: 180,
   paddingBottom: 16,
   [theme.breakpoints.up("sm")]: {
@@ -71,16 +73,16 @@ const LogoBox = styled(Box)(({ theme }) => ({
   },
 }));
 
-const TextBox = styled(Box)(() => ({
+const HeaderText = styled(Box)(() => ({
   display: "flex",
   flexDirection: "column",
 }));
 
-const Subtitle = styled(Typography)(() => ({
+const HeaderSubtext = styled(Typography)(() => ({
   color: "lightgray",
 }));
 
-const ButtonContainer = styled(Box)({
+const HeaderButtons = styled(Box)({
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
