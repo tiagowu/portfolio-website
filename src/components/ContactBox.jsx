@@ -8,7 +8,7 @@ const ContactBox = ({ label, content, icon: Icon }) => {
         <Typography variant="h6">{label}</Typography>
         {Icon && <Icon />}
       </Label>
-      <Link href={label !== "Email" ? content : `mailto:${content}`} variant="h6" noWrap>
+      <Link href={label !== "Email" ? content : `mailto:${content}`} variant="body1" noWrap>
         {label !== "Email" ? content.substring(content.indexOf(".") + 1) : content}
       </Link>
     </StyledBox>
@@ -29,6 +29,7 @@ const Label = styled(Box)(({ theme }) => ({
   alignItems: "center",
   justifyContent: "center",
   gap: theme.spacing(1),
+  color: "white",
 }));
 
 export default ContactBox;
