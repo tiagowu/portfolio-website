@@ -30,8 +30,8 @@ const NavButtons = ({ navigations }) => {
 };
 
 /* Styled Components */
-const StyledButton = styled(Button)(() => ({
+const StyledButton = styled(Button)({
   color: "white",
-}));
+});
 
 export default NavButtons;

@@ -41,14 +41,14 @@ const ProjectCard = ({ project }) => {
 };
 
 /* Styled Components */
-const CardWrapper = styled(Card)(() => ({
+const CardWrapper = styled(Card)({
   minHeight: 240,
   maxWidth: 440,
   height: "100%",
   display: "flex",
   flexDirection: "column",
   backgroundColor: "inherit",
-}));
+});
 
 const CardContentWrapper = styled(CardContent)(({ theme }) => ({
   display: "flex",
@@ -57,10 +57,10 @@ const CardContentWrapper = styled(CardContent)(({ theme }) => ({
   border: `2px solid ${theme.palette.primary.main}`,
 }));
 
-const DateTagContainer = styled(Box)(() => ({
+const DateTagContainer = styled(Box)({
   display: "flex",
   alignItems: "flex-start",
-}));
+});
 
 const DateTag = styled(Typography)(({ theme }) => ({
   backgroundColor: theme.palette.primary.main,
@@ -69,45 +69,45 @@ const DateTag = styled(Typography)(({ theme }) => ({
   marginBottom: 8,
 }));
 
-const Title = styled(Typography)(() => ({
+const Title = styled(Typography)({
   textAlign: "center",
   marginBottom: 16,
-}));
+});
 
 const DividerLine = styled(Divider)(({ theme }) => ({
   backgroundColor: theme.palette.primary.main,
 }));
 
-const Description = styled(Typography)(() => ({
+const Description = styled(Typography)({
   marginTop: 8,
   marginBottom: 8,
-}));
+});
 
-const Technologies = styled(Box)(() => ({
+const Technologies = styled(Box)({
   display: "flex",
   flexDirection: "row",
   alignItems: "center",
   height: 48,
   gap: 8,
-}));
+});
 
-const IconBox = styled(Box)(() => ({
+const IconBox = styled(Box)({
   display: "flex",
   alignItems: "center",
   fontSize: 32,
-}));
+});
 
-const CardFooter = styled(Box)(() => ({
+const CardFooter = styled(Box)({
   display: "flex",
   justifyContent: "space-between",
   marginTop: "auto",
-}));
+});
 
-const Actions = styled(Box)(() => ({
+const Actions = styled(Box)({
   display: "flex",
   flexDirection: "row",
   alignItems: "center",
   gap: 8,
-}));
+});
 
 export default ProjectCard;

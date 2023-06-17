@@ -21,9 +21,9 @@ const Footer = () => {
 };
 
 /* Styled Components */
-const FooterContainer = styled(Container)(() => ({
+const FooterContainer = styled(Container)(({ theme }) => ({
   textAlign: "center",
-  paddingTop: 36,
+  paddingTop: theme.spacing(4),
 }));
 
 export default Footer;

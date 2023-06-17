@@ -36,7 +36,7 @@ const NavDrawer = ({ navigations, isDrawerOpen, toggleDrawer }) => {
 };
 
 /* Styled Components */
-const StyledDrawer = styled(Drawer)(({ theme }) => ({
+const StyledDrawer = styled(Drawer)({
   width: 250,
   flexShrink: 0,
   "& .MuiDrawer-paper": {
@@ -44,10 +44,10 @@ const StyledDrawer = styled(Drawer)(({ theme }) => ({
     boxSizing: "border-box",
     backgroundColor: "#242933",
   },
-}));
+});
 
-const DrawerButton = styled(ListItemButton)(() => ({
+const DrawerButton = styled(ListItemButton)({
   borderRadius: 8,
-}));
+});
 
 export default NavDrawer;

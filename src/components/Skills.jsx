@@ -27,31 +27,31 @@ const Skills = () => {
 };
 
 /* Styled Components */
-const Title = styled(Typography)(() => ({
+const Title = styled(Typography)({
   textAlign: "center",
   paddingBottom: 32,
   paddingTop: 72,
-}));
+});
 
-const SectionGridContainer = styled(Grid)(() => ({
+const SectionGridContainer = styled(Grid)({
   alignItems: "center",
   justifyContent: "center",
   gap: 8,
-}));
+});
 
-const Section = styled(Typography)(() => ({
+const Section = styled(Typography)({
   textAlign: "center",
   paddingBottom: 16,
-}));
+});
 
-const SkillGridContainer = styled(Grid)(() => ({
+const SkillGridContainer = styled(Grid)({
   alignItems: "center",
   justifyContent: "center",
   gap: 24,
-}));
+});
 
-const SkillGridItem = styled(Grid)(() => ({
+const SkillGridItem = styled(Grid)({
   fontSize: 72,
-}));
+});
 
 export default Skills;

@@ -22,14 +22,14 @@ const Projects = () => {
 };
 
 /* Styled Components */
-const Title = styled(Typography)(() => ({
+const Title = styled(Typography)({
   textAlign: "center",
   paddingBottom: 32,
   paddingTop: 72,
-}));
+});
 
-const ProjectGridContainer = styled(Grid)(() => ({
+const ProjectGridContainer = styled(Grid)({
   justifyContent: "center",
-}));
+});
 
 export default Projects;

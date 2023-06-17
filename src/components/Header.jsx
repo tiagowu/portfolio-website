@@ -42,12 +42,12 @@ const Header = () => {
 };
 
 /* Styled Components */
-const HeaderContainer = styled(Container)(() => ({
+const HeaderContainer = styled(Container)({
   display: "flex",
   alignItems: "center",
   minHeight: "100vh",
   paddingTop: 72,
-}));
+});
 
 const HeaderContent = styled(Box)(({ theme }) => ({
   display: "flex",
@@ -73,14 +73,14 @@ const HeaderLogo = styled(Box)(({ theme }) => ({
   },
 }));
 
-const HeaderText = styled(Box)(() => ({
+const HeaderText = styled(Box)({
   display: "flex",
   flexDirection: "column",
-}));
+});
 
-const HeaderSubtext = styled(Typography)(() => ({
+const HeaderSubtext = styled(Typography)({
   color: "lightgray",
-}));
+});
 
 const HeaderButtons = styled(Box)({
   display: "flex",
