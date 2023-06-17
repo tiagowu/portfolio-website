@@ -1,27 +1,7 @@
-import { useState } from "react";
-import NavDrawer from "./NavDrawer";
+import { Button } from "@mui/material";
+import { styled } from "@mui/system";
 
-import { Button, IconButton, useMediaQuery, useTheme } from "@mui/material";
-import MenuIcon from "@mui/icons-material/Menu";
-
-const NavButtons = () => {
-  const theme = useTheme();
-  const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
-
-  const navigations = [
-    { id: 1, label: "About" },
-    { id: 2, label: "Education" },
-    { id: 3, label: "Projects" },
-    { id: 4, label: "Skills" },
-    { id: 5, label: "Contact" },
-  ];
-
-  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
-
-  const toggleDrawer = () => {
-    setIsDrawerOpen(!isDrawerOpen);
-  };
-
+const NavButtons = ({ navigations }) => {
   const handleNavClick = (id) => {
     const element = document.getElementById(id);
     if (element) {
@@ -33,30 +13,25 @@ const NavButtons = () => {
 
   return (
     <>
-      {isSmallScreen ? (
-        <>
-          <IconButton edge="start" color="inherit" aria-label="menu" onClick={toggleDrawer}>
-            <MenuIcon />
-          </IconButton>
-          <NavDrawer navigations={navigations} isDrawerOpen={isDrawerOpen} toggleDrawer={toggleDrawer} handleNavClick={handleNavClick} />
-        </>
-      ) : (
-        navigations.map((item) => (
-          <Button
-            href={`#${item.label.toLowerCase()}`}
-            key={item.id}
-            color="inherit"
-            onClick={(e) => {
-              e.preventDefault();
-              handleNavClick(item.label.toLowerCase());
-            }}
-          >
-            {`${item.id.toString().padStart(2, "0")}. ${item.label}`}
-          </Button>
-        ))
-      )}
+      {navigations.map((item) => (
+        <StyledButton
+          href={`#${item.id}`}
+          key={item.id}
+          onClick={(e) => {
+            e.preventDefault();
+            handleNavClick(item.id);
+          }}
+        >
+          {item.label}
+        </StyledButton>
+      ))}
     </>
   );
 };
+
+/* Styled Components */
+const StyledButton = styled(Button)(() => ({
+  color: "white",
+}));
 
 export default NavButtons;
