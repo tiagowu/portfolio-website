@@ -3,20 +3,20 @@ import { styled } from "@mui/system";
 
 const ContactBox = ({ label, content, icon: Icon }) => {
   return (
-    <StyledBox>
-      <Label>
+    <ContactWrapper>
+      <ContactLabel>
         <Typography variant="h6">{label}</Typography>
         {Icon && <Icon />}
-      </Label>
+      </ContactLabel>
       <Link href={label !== "Email" ? content : `mailto:${content}`} variant="body1" noWrap>
         {label !== "Email" ? content.substring(content.indexOf(".") + 1) : content}
       </Link>
-    </StyledBox>
+    </ContactWrapper>
   );
 };
 
 /* Styled Components */
-const StyledBox = styled(Box)(({ theme }) => ({
+const ContactWrapper = styled(Box)(({ theme }) => ({
   display: "flex",
   flexDirection: "column",
   padding: theme.spacing(2),
@@ -24,7 +24,7 @@ const StyledBox = styled(Box)(({ theme }) => ({
   borderRadius: 4,
 }));
 
-const Label = styled(Box)(({ theme }) => ({
+const ContactLabel = styled(Box)(({ theme }) => ({
   display: "flex",
   alignItems: "center",
   justifyContent: "center",

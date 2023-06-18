@@ -14,7 +14,7 @@ const NavButtons = ({ navigations }) => {
   return (
     <>
       {navigations.map((item) => (
-        <StyledButton
+        <NavButton
           href={`#${item.id}`}
           key={item.id}
           onClick={(e) => {
@@ -23,14 +23,14 @@ const NavButtons = ({ navigations }) => {
           }}
         >
           {item.label}
-        </StyledButton>
+        </NavButton>
       ))}
     </>
   );
 };
 
 /* Styled Components */
-const StyledButton = styled(Button)({
+const NavButton = styled(Button)({
   color: "white",
 });
 

@@ -52,7 +52,7 @@ const ContactForm = () => {
   };
 
   return (
-    <ContactFormWrapper>
+    <ContactFormContainer>
       <Typography variant="h5">Contact Me</Typography>
       <form onSubmit={handleFormSubmit}>
         <ContactFormInput label="Name" margin="normal" name="name" value={name} onChange={handleChange} autoComplete="new-password" required />
@@ -63,12 +63,12 @@ const ContactForm = () => {
           Submit
         </ContactFormButton>
       </form>
-    </ContactFormWrapper>
+    </ContactFormContainer>
   );
 };
 
 /* Styled Components */
-const ContactFormWrapper = styled(Box)({
+const ContactFormContainer = styled(Box)({
   textAlign: "center",
 });
 

@@ -15,28 +15,28 @@ const NavDrawer = ({ navigations, isDrawerOpen, toggleDrawer }) => {
   };
 
   return (
-    <StyledDrawer anchor="right" open={isDrawerOpen} onClose={toggleDrawer}>
+    <NavigationDrawer anchor="right" open={isDrawerOpen} onClose={toggleDrawer}>
       <List>
-        {navigations.map((item) => (
+        {navigations.map((navigation) => (
           <ListItem
-            key={item.id}
+            key={navigation.id}
             onClick={(e) => {
               e.preventDefault();
-              handleItemClick(item.id);
+              handleItemClick(navigation.id);
             }}
           >
-            <DrawerButton>
-              <ListItemText primary={item.label} />
-            </DrawerButton>
+            <NavDrawerButton>
+              <ListItemText primary={navigation.label} />
+            </NavDrawerButton>
           </ListItem>
         ))}
       </List>
-    </StyledDrawer>
+    </NavigationDrawer>
   );
 };
 
 /* Styled Components */
-const StyledDrawer = styled(Drawer)({
+const NavigationDrawer = styled(Drawer)({
   width: 250,
   flexShrink: 0,
   "& .MuiDrawer-paper": {
@@ -46,7 +46,7 @@ const StyledDrawer = styled(Drawer)({
   },
 });
 
-const DrawerButton = styled(ListItemButton)({
+const NavDrawerButton = styled(ListItemButton)({
   borderRadius: 8,
 });
 

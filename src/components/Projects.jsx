@@ -8,8 +8,8 @@ const Projects = () => {
   const reversedProjectsData = [...projectsData].reverse();
 
   return (
-    <Container id="projects" maxWidth={false}>
-      <Title variant="h4">Project</Title>
+    <ProjectsContainer id="projects">
+      <ProjectsTitle variant="h4">Project</ProjectsTitle>
       <ProjectGridContainer container spacing={4}>
         {reversedProjectsData.map((project, index) => (
           <Grid item key={index}>
@@ -17,12 +17,16 @@ const Projects = () => {
           </Grid>
         ))}
       </ProjectGridContainer>
-    </Container>
+    </ProjectsContainer>
   );
 };
 
 /* Styled Components */
-const Title = styled(Typography)({
+const ProjectsContainer = styled(Container)({
+  width: "100%",
+});
+
+const ProjectsTitle = styled(Typography)({
   textAlign: "center",
   paddingBottom: 32,
   paddingTop: 72,

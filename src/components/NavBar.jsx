@@ -25,47 +25,47 @@ const NavBar = () => {
   };
 
   return (
-    <StyledAppBar>
-      <StyledToolbar disableGutters>
-        <NavBarLogo>
-          <StyledLogo />
-        </NavBarLogo>
+    <NavAppBar>
+      <NavToolbar disableGutters>
+        <NavBarLogoBox>
+          <NavLogo />
+        </NavBarLogoBox>
         {isSmallScreen ? (
           <>
-            <MenuButton onClick={toggleDrawer}>
+            <NavMenuButton onClick={toggleDrawer}>
               <MenuIcon />
-            </MenuButton>
+            </NavMenuButton>
             <NavDrawer navigations={navigations} isDrawerOpen={isDrawerOpen} toggleDrawer={toggleDrawer} />
           </>
         ) : (
           <NavButtons navigations={navigations} />
         )}
-      </StyledToolbar>
-    </StyledAppBar>
+      </NavToolbar>
+    </NavAppBar>
   );
 };
 
 /* Styled Components */
-const StyledAppBar = styled(AppBar)({
+const NavAppBar = styled(AppBar)({
   position: "fixed",
   backgroundColor: "#242933",
 });
 
-const StyledToolbar = styled(Toolbar)(({ theme }) => ({
+const NavToolbar = styled(Toolbar)(({ theme }) => ({
   height: 64,
   paddingLeft: theme.spacing(2),
   paddingRight: theme.spacing(2),
 }));
 
-const NavBarLogo = styled(Box)({
+const NavBarLogoBox = styled(Box)({
   flexGrow: 1,
 });
 
-const StyledLogo = styled(Logo)({
+const NavLogo = styled(Logo)({
   width: 80,
 });
 
-const MenuButton = styled(IconButton)({
+const NavMenuButton = styled(IconButton)({
   color: "inherit",
 });
 

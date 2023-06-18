@@ -16,11 +16,11 @@ const Header = () => {
   return (
     <HeaderContainer maxWidth={false}>
       <NavBar />
-      <HeaderContent>
-        <HeaderLogo>
+      <HeaderContentBox>
+        <HeaderLogoBox>
           <Panda />
-        </HeaderLogo>
-        <HeaderText>
+        </HeaderLogoBox>
+        <HeaderTextBox>
           <Typography variant="h4" sx={{ typography: { sm: "h3" } }}>
             Hello!
           </Typography>
@@ -35,8 +35,8 @@ const Header = () => {
               <LinkButton key={index} link={button.link} icon={button.icon} iconProps={{ fontSize: 32 }} />
             ))}
           </HeaderButtons>
-        </HeaderText>
-      </HeaderContent>
+        </HeaderTextBox>
+      </HeaderContentBox>
     </HeaderContainer>
   );
 };
@@ -49,7 +49,7 @@ const HeaderContainer = styled(Container)({
   paddingTop: 72,
 });
 
-const HeaderContent = styled(Box)(({ theme }) => ({
+const HeaderContentBox = styled(Box)(({ theme }) => ({
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
@@ -63,7 +63,7 @@ const HeaderContent = styled(Box)(({ theme }) => ({
   },
 }));
 
-const HeaderLogo = styled(Box)(({ theme }) => ({
+const HeaderLogoBox = styled(Box)(({ theme }) => ({
   minWidth: 180,
   paddingBottom: 16,
   [theme.breakpoints.up("sm")]: {
@@ -73,7 +73,7 @@ const HeaderLogo = styled(Box)(({ theme }) => ({
   },
 }));
 
-const HeaderText = styled(Box)({
+const HeaderTextBox = styled(Box)({
   display: "flex",
   flexDirection: "column",
 });

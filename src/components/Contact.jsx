@@ -13,39 +13,39 @@ const contactInfo = [
 
 const Contact = () => {
   return (
-    <StyledContainer id="contact">
-      <StyledTitle variant="h4">Contact</StyledTitle>
-      <StyledWrapper>
-        <StyledFormBox>
+    <ContactContainer id="contact">
+      <ContactTitle variant="h4">Contact</ContactTitle>
+      <ContactWrapper>
+        <ContactContentBox>
           <ContactForm />
-          <StyledInfoBox>
+          <ContactInfoBox>
             {contactInfo.map(({ label, content, icon }) => (
               <ContactBox key={label} label={label} content={content} icon={icon} />
             ))}
-          </StyledInfoBox>
-        </StyledFormBox>
-      </StyledWrapper>
-    </StyledContainer>
+          </ContactInfoBox>
+        </ContactContentBox>
+      </ContactWrapper>
+    </ContactContainer>
   );
 };
 
 /* Styled Components */
-const StyledContainer = styled(Container)({
+const ContactContainer = styled(Container)({
   width: "100%",
 });
 
-const StyledTitle = styled(Typography)(({ theme }) => ({
+const ContactTitle = styled(Typography)(({ theme }) => ({
   textAlign: "center",
   paddingBottom: theme.spacing(4),
   paddingTop: theme.spacing(9),
 }));
 
-const StyledWrapper = styled(Box)({
+const ContactWrapper = styled(Box)({
   margin: "auto",
   maxWidth: 1000,
 });
 
-const StyledFormBox = styled(Box)(({ theme }) => ({
+const ContactContentBox = styled(Box)(({ theme }) => ({
   display: "flex",
   flexDirection: "column",
   justifyContent: "center",
@@ -57,7 +57,7 @@ const StyledFormBox = styled(Box)(({ theme }) => ({
   },
 }));
 
-const StyledInfoBox = styled(Box)(({ theme }) => ({
+const ContactInfoBox = styled(Box)(({ theme }) => ({
   display: "flex",
   flexDirection: "column",
   textAlign: "center",

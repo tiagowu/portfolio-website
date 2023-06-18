@@ -6,12 +6,12 @@ import { styled } from "@mui/system";
 
 const Skills = () => {
   return (
-    <Container id="skills" maxWidth={false}>
-      <Title variant="h4">Skills</Title>
-      <SectionGridContainer container>
+    <SkillsContainer id="skills">
+      <SkillsTitle variant="h4">Skills</SkillsTitle>
+      <SkillsSectionGridContainer container>
         {skillsData.map(({ section, skills }, sectionIndex) => (
           <Grid item xs={12} key={sectionIndex}>
-            <Section variant="h5">{section}</Section>
+            <SkillsSection variant="h5">{section}</SkillsSection>
             <SkillGridContainer container>
               {skills.map((skill, skillIndex) => {
                 const lowercaseSkill = skill.toLowerCase();
@@ -24,25 +24,29 @@ const Skills = () => {
             </SkillGridContainer>
           </Grid>
         ))}
-      </SectionGridContainer>
-    </Container>
+      </SkillsSectionGridContainer>
+    </SkillsContainer>
   );
 };
 
 /* Styled Components */
-const Title = styled(Typography)({
+const SkillsContainer = styled(Container)({
+  width: "100%",
+});
+
+const SkillsTitle = styled(Typography)({
   textAlign: "center",
   paddingBottom: 32,
   paddingTop: 72,
 });
 
-const SectionGridContainer = styled(Grid)({
+const SkillsSectionGridContainer = styled(Grid)({
   alignItems: "center",
   justifyContent: "center",
   gap: 8,
 });
 
-const Section = styled(Typography)({
+const SkillsSection = styled(Typography)({
   textAlign: "center",
   paddingBottom: 16,
 });

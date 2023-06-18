@@ -4,15 +4,15 @@ import { styled } from "@mui/system";
 const LinkButton = ({ link, icon: Icon, iconProps }) => {
   return (
     <Link href={link} target="_blank" rel="noopener noreferrer">
-      <StyledButton disableRipple>
+      <LinkIconButton disableRipple>
         <Icon sx={{ fontSize: iconProps.fontSize }} />
-      </StyledButton>
+      </LinkIconButton>
     </Link>
   );
 };
 
 /* Styled Components */
-const StyledButton = styled(IconButton)(({ theme }) => ({
+const LinkIconButton = styled(IconButton)(({ theme }) => ({
   backgroundColor: theme.palette.primary.main,
   color: "white",
   borderRadius: 8,

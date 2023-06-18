@@ -10,7 +10,7 @@ const ProjectCard = ({ project }) => {
   const renderTechnology = (technology, index) => {
     const lowercaseTechnology = technology.toLowerCase();
     return lowercaseTechnology in skillIcons ? (
-      <IconBox key={index}>{skillIcons[lowercaseTechnology]}</IconBox>
+      <ProjectIconBox key={index}>{skillIcons[lowercaseTechnology]}</ProjectIconBox>
     ) : (
       <Typography key={index} variant="h6">
         {technology}
@@ -19,28 +19,28 @@ const ProjectCard = ({ project }) => {
   };
 
   return (
-    <CardWrapper>
-      <CardContentWrapper>
-        <DateTagContainer>
-          <DateTag variant="caption">{completedOn}</DateTag>
-        </DateTagContainer>
-        <Title variant="h5">{projectName}</Title>
-        <DividerLine />
-        <Description variant="body1">{description}</Description>
-        <CardFooter>
-          <Technologies>{technologies.map(renderTechnology)}</Technologies>
-          <Actions>
+    <ProjectCardContainer>
+      <ProjectContentContainer>
+        <ProjectDateBox>
+          <ProjectDate variant="caption">{completedOn}</ProjectDate>
+        </ProjectDateBox>
+        <ProjectTitle variant="h5">{projectName}</ProjectTitle>
+        <ProjectDivider />
+        <ProjectDescription variant="body1">{description}</ProjectDescription>
+        <ProjectCardFooter>
+          <ProjectTechnologies>{technologies.map(renderTechnology)}</ProjectTechnologies>
+          <ProjectActions>
             {githubLink && <LinkButton link={githubLink} icon={infoIcons.github} iconProps={{ fontSize: 24 }} />}
             {demoLink && <LinkButton link={demoLink} icon={infoIcons.demo} iconProps={{ fontSize: 24 }} />}
-          </Actions>
-        </CardFooter>
-      </CardContentWrapper>
-    </CardWrapper>
+          </ProjectActions>
+        </ProjectCardFooter>
+      </ProjectContentContainer>
+    </ProjectCardContainer>
   );
 };
 
 /* Styled Components */
-const CardWrapper = styled(Card)({
+const ProjectCardContainer = styled(Card)({
   minHeight: 240,
   maxWidth: 440,
   height: "100%",
@@ -49,40 +49,40 @@ const CardWrapper = styled(Card)({
   backgroundColor: "inherit",
 });
 
-const CardContentWrapper = styled(CardContent)(({ theme }) => ({
+const ProjectContentContainer = styled(CardContent)(({ theme }) => ({
   display: "flex",
   flexDirection: "column",
   height: "100%",
   border: `2px solid ${theme.palette.primary.main}`,
 }));
 
-const DateTagContainer = styled(Box)({
+const ProjectDateBox = styled(Box)({
   display: "flex",
   alignItems: "flex-start",
 });
 
-const DateTag = styled(Typography)(({ theme }) => ({
+const ProjectDate = styled(Typography)(({ theme }) => ({
   backgroundColor: theme.palette.primary.main,
   borderRadius: 16,
   padding: 8,
   marginBottom: 8,
 }));
 
-const Title = styled(Typography)({
+const ProjectTitle = styled(Typography)({
   textAlign: "center",
   marginBottom: 16,
 });
 
-const DividerLine = styled(Divider)(({ theme }) => ({
+const ProjectDivider = styled(Divider)(({ theme }) => ({
   backgroundColor: theme.palette.primary.main,
 }));
 
-const Description = styled(Typography)({
+const ProjectDescription = styled(Typography)({
   marginTop: 8,
   marginBottom: 8,
 });
 
-const Technologies = styled(Box)({
+const ProjectTechnologies = styled(Box)({
   display: "flex",
   flexDirection: "row",
   alignItems: "center",
@@ -90,19 +90,19 @@ const Technologies = styled(Box)({
   gap: 8,
 });
 
-const IconBox = styled(Box)({
+const ProjectIconBox = styled(Box)({
   display: "flex",
   alignItems: "center",
   fontSize: 32,
 });
 
-const CardFooter = styled(Box)({
+const ProjectCardFooter = styled(Box)({
   display: "flex",
   justifyContent: "space-between",
   marginTop: "auto",
 });
 
-const Actions = styled(Box)({
+const ProjectActions = styled(Box)({
   display: "flex",
   flexDirection: "row",
   alignItems: "center",

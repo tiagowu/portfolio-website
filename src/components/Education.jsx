@@ -7,24 +7,24 @@ import { styled } from "@mui/system";
 const Education = () => {
   const sortedCoursesData = [...coursesData].reverse().sort((a, b) => (a.completed === b.completed ? 0 : a.completed ? 1 : -1));
   return (
-    <StyledContainer id="education">
-      <StyledTitle variant="h4">Education</StyledTitle>
-      <StyledInfoWrapper>
+    <EducationContainer id="education">
+      <EducationTitle variant="h4">Education</EducationTitle>
+      <EducationContentBox>
         <StyledSBULogo />
-        <StyledInfoBox>
+        <EducationInfoBox>
           <Typography variant="body1">Stony Brook University</Typography>
           <Typography variant="body1">Computer Science, B.S.</Typography>
           <Typography variant="body1">Exp. Grad: May 2024</Typography>
           <Typography variant="body1">Cumulative GPA: 3.83</Typography>
-        </StyledInfoBox>
-      </StyledInfoWrapper>
-      <StyledTableWrapper disableGutters>
-        <StyledTable>
+        </EducationInfoBox>
+      </EducationContentBox>
+      <EducationTableContainer disableGutters>
+        <EducationTable>
           <TableHead>
             <TableRow>
-              <StyledTableCell>Course</StyledTableCell>
-              <StyledTableCell>Course Name</StyledTableCell>
-              <StyledTableCell>Instructor</StyledTableCell>
+              <EducationTableCell>Course</EducationTableCell>
+              <EducationTableCell>Course Name</EducationTableCell>
+              <EducationTableCell>Instructor</EducationTableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -32,31 +32,31 @@ const Education = () => {
               const completedString = course.completed.toString();
               return (
                 <TableRow key={index}>
-                  <StyledTableCell completed={completedString}>{course.courseNumber}</StyledTableCell>
-                  <StyledTableCell completed={completedString}>{course.courseName}</StyledTableCell>
-                  <StyledTableCell completed={completedString}>{course.instructor}</StyledTableCell>
+                  <EducationTableCell completed={completedString}>{course.courseNumber}</EducationTableCell>
+                  <EducationTableCell completed={completedString}>{course.courseName}</EducationTableCell>
+                  <EducationTableCell completed={completedString}>{course.instructor}</EducationTableCell>
                 </TableRow>
               );
             })}
           </TableBody>
-        </StyledTable>
-      </StyledTableWrapper>
-    </StyledContainer>
+        </EducationTable>
+      </EducationTableContainer>
+    </EducationContainer>
   );
 };
 
 /* Styled Components */
-const StyledContainer = styled(Container)({
+const EducationContainer = styled(Container)({
   width: "100%",
 });
 
-const StyledTitle = styled(Typography)(({ theme }) => ({
+const EducationTitle = styled(Typography)(({ theme }) => ({
   textAlign: "center",
   paddingBottom: theme.spacing(4),
   paddingTop: theme.spacing(9),
 }));
 
-const StyledInfoWrapper = styled(Box)(({ theme }) => ({
+const EducationContentBox = styled(Box)(({ theme }) => ({
   display: "flex",
   flexDirection: "row",
   alignItems: "center",
@@ -75,7 +75,7 @@ const StyledSBULogo = styled(SBULogo)({
   height: 120,
 });
 
-const StyledInfoBox = styled(Box)(({ theme }) => ({
+const EducationInfoBox = styled(Box)(({ theme }) => ({
   display: "flex",
   flexDirection: "column",
   gap: theme.spacing(1),
@@ -84,7 +84,7 @@ const StyledInfoBox = styled(Box)(({ theme }) => ({
   },
 }));
 
-const StyledTableWrapper = styled(Container)(({ theme }) => ({
+const EducationTableContainer = styled(Container)(({ theme }) => ({
   overflowX: "auto",
   paddingLeft: 0,
   paddingRight: 0,
@@ -100,7 +100,7 @@ const StyledTableWrapper = styled(Container)(({ theme }) => ({
   },
 }));
 
-const StyledTable = styled(Table)({
+const EducationTable = styled(Table)({
   margin: "auto",
   maxWidth: 1000,
 
@@ -109,7 +109,7 @@ const StyledTable = styled(Table)({
   },
 });
 
-const StyledTableCell = styled(TableCell)(({ completed, theme }) => ({
+const EducationTableCell = styled(TableCell)(({ completed, theme }) => ({
   "&.MuiTableCell-body": {
     color: completed === "true" ? "#70b337" : "red",
   },
