@@ -60,7 +60,7 @@ const ContactForm = () => {
         <ContactFormInput label="Message" margin="normal" name="message" value={message} onChange={handleChange} multiline rows={4} required />
         {isFormSubmitted && <ContactFormMessage variant="body1">Message successfully sent!</ContactFormMessage>}
         <ContactFormButton variant="contained" type="submit">
-          Submit
+          Send Message
         </ContactFormButton>
       </form>
     </ContactFormContainer>
