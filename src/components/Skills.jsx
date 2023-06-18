@@ -13,11 +13,14 @@ const Skills = () => {
           <Grid item xs={12} key={sectionIndex}>
             <Section variant="h5">{section}</Section>
             <SkillGridContainer container>
-              {skills.map((skill, skillIndex) => (
-                <SkillGridItem item key={skillIndex}>
-                  {skillIcons[skill.toLowerCase()]}
-                </SkillGridItem>
-              ))}
+              {skills.map((skill, skillIndex) => {
+                const lowercaseSkill = skill.toLowerCase();
+                return (
+                  <SkillGridItem item key={skillIndex}>
+                    {lowercaseSkill in skillIcons ? skillIcons[lowercaseSkill] : <Typography>{skill}</Typography>}
+                  </SkillGridItem>
+                );
+              })}
             </SkillGridContainer>
           </Grid>
         ))}
@@ -44,14 +47,16 @@ const Section = styled(Typography)({
   paddingBottom: 16,
 });
 
-const SkillGridContainer = styled(Grid)({
+const SkillGridContainer = styled(Grid)(({ theme }) => ({
   alignItems: "center",
   justifyContent: "center",
-  gap: 24,
-});
+  gap: theme.spacing(1.5),
+}));
 
 const SkillGridItem = styled(Grid)({
   fontSize: 72,
+  width: 80,
+  textAlign: "center",
 });
 
 export default Skills;
