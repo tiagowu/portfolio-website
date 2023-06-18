@@ -31,6 +31,9 @@ const Skills = () => {
 
 /* Styled Components */
 const SkillsContainer = styled(Container)({
+  display: "flex",
+  alignItems: "center",
+  flexDirection: "column",
   width: "100%",
 });
 
@@ -43,6 +46,7 @@ const SkillsTitle = styled(Typography)({
 const SkillsSectionGridContainer = styled(Grid)({
   alignItems: "center",
   justifyContent: "center",
+  maxWidth: 1000,
   gap: 8,
 });
 
