@@ -5,34 +5,33 @@ import { Box, Card, CardContent, Divider, Typography } from "@mui/material";
 import { styled } from "@mui/system";
 
 const ProjectCard = ({ project }) => {
-  const renderTechnologies = () => {
-    return project.technologies.map((technology, index) => {
-      const technologyKey = technology.toLowerCase();
-      if (skillIcons.hasOwnProperty(technologyKey)) {
-        return <IconBox key={index}>{skillIcons[technologyKey]}</IconBox>;
-      }
-      return (
-        <Typography key={index} variant="h6">
-          {technology}
-        </Typography>
-      );
-    });
+  const { completedOn, projectName, description, technologies, githubLink, demoLink } = project;
+
+  const renderTechnology = (technology, index) => {
+    const lowercaseTechnology = technology.toLowerCase();
+    return lowercaseTechnology in skillIcons ? (
+      <IconBox key={index}>{skillIcons[lowercaseTechnology]}</IconBox>
+    ) : (
+      <Typography key={index} variant="h6">
+        {technology}
+      </Typography>
+    );
   };
 
   return (
     <CardWrapper>
       <CardContentWrapper>
         <DateTagContainer>
-          <DateTag variant="caption">{project.completedOn}</DateTag>
+          <DateTag variant="caption">{completedOn}</DateTag>
         </DateTagContainer>
-        <Title variant="h5">{project.projectName}</Title>
+        <Title variant="h5">{projectName}</Title>
         <DividerLine />
-        <Description variant="body1">{project.description}</Description>
+        <Description variant="body1">{description}</Description>
         <CardFooter>
-          <Technologies>{renderTechnologies()}</Technologies>
+          <Technologies>{technologies.map(renderTechnology)}</Technologies>
           <Actions>
-            {project.githubLink && <LinkButton link={project.githubLink} icon={infoIcons.github} iconProps={{ fontSize: 24 }} />}
-            {project.demoLink && <LinkButton link={project.demoLink} icon={infoIcons.demo} iconProps={{ fontSize: 24 }} />}
+            {githubLink && <LinkButton link={githubLink} icon={infoIcons.github} iconProps={{ fontSize: 24 }} />}
+            {demoLink && <LinkButton link={demoLink} icon={infoIcons.demo} iconProps={{ fontSize: 24 }} />}
           </Actions>
         </CardFooter>
       </CardContentWrapper>
