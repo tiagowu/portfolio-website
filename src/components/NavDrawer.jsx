@@ -1,16 +1,11 @@
 import { Drawer, List, ListItem, ListItemButton, ListItemText } from "@mui/material";
 import { styled } from "@mui/system";
 
-const NavDrawer = ({ navigations, isDrawerOpen, toggleDrawer }) => {
+const NavDrawer = ({ navigations, isDrawerOpen, toggleDrawer, handleNavClick }) => {
   const handleItemClick = (id) => {
     toggleDrawer();
     setTimeout(() => {
-      const element = document.getElementById(id);
-      if (element) {
-        const url = `/#${id}`;
-        window.history.pushState(null, "", url);
-        element.scrollIntoView({ behavior: "smooth" });
-      }
+      handleNavClick(id);
     }, 100);
   };
 
