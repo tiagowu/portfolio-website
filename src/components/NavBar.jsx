@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import NavButtons from "./NavButtons";
 import NavDrawer from "./NavDrawer";
 import { ReactComponent as Logo } from "../assets/Logo.svg";
@@ -8,6 +8,16 @@ import MenuIcon from "@mui/icons-material/Menu";
 import { styled } from "@mui/system";
 
 const NavBar = () => {
+  useEffect(() => {
+    const defaultUrl = "/";
+    const entries = window.performance.getEntriesByType("navigation");
+    const navigationEntry = entries[0];
+
+    if (navigationEntry.type === "reload") {
+      window.location.href = defaultUrl;
+    }
+  }, []);
+
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
 
@@ -19,6 +29,17 @@ const NavBar = () => {
     { id: "contact", label: "05. CONTACT" },
   ];
 
+  const handleNavClick = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      const url = `/#${id}`;
+      window.history.pushState(null, "", url);
+      element.scrollIntoView({ behavior: "smooth" });
+    } else {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  };
+
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const toggleDrawer = () => {
     setIsDrawerOpen(!isDrawerOpen);
@@ -27,15 +48,15 @@ const NavBar = () => {
   return (
     <NavAppBar>
       <NavToolbar disableGutters>
-        <NavBarLogoBox>
+        <NavLogoBox onClick={handleNavClick}>
           <NavLogo />
-        </NavBarLogoBox>
+        </NavLogoBox>
         {isSmallScreen ? (
           <>
             <NavMenuButton onClick={toggleDrawer}>
               <MenuIcon />
             </NavMenuButton>
-            <NavDrawer navigations={navigations} isDrawerOpen={isDrawerOpen} toggleDrawer={toggleDrawer} />
+            <NavDrawer navigations={navigations} isDrawerOpen={isDrawerOpen} toggleDrawer={toggleDrawer} handleNavClick={handleNavClick} />
           </>
         ) : (
           <NavButtons navigations={navigations} />
@@ -57,12 +78,13 @@ const NavToolbar = styled(Toolbar)(({ theme }) => ({
   paddingRight: theme.spacing(2),
 }));
 
-const NavBarLogoBox = styled(Box)({
+const NavLogoBox = styled(Box)({
   flexGrow: 1,
 });
 
 const NavLogo = styled(Logo)({
   width: 80,
+  cursor: "pointer",
 });
 
 const NavMenuButton = styled(IconButton)({
