@@ -1,10 +1,10 @@
+import { Box, Container, Typography } from "@mui/material";
+import { styled } from "@mui/system";
+
 import NavBar from "./NavBar";
 import LinkButton from "./LinkButton";
 import { infoIcons } from "../data/IconsData";
 import { ReactComponent as Panda } from "../assets/Panda.svg";
-
-import { Box, Container, Typography } from "@mui/material";
-import { styled } from "@mui/system";
 
 const Header = () => {
   const buttonsInfo = [

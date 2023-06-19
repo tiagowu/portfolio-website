@@ -1,8 +1,8 @@
-import { skillIcons } from "../data/IconsData";
-import { skillsData } from "../data/SkillsData";
-
 import { Container, Grid, Typography } from "@mui/material";
 import { styled } from "@mui/system";
+
+import { skillIcons } from "../data/IconsData";
+import { skillsData } from "../data/SkillsData";
 
 const Skills = () => {
   return (

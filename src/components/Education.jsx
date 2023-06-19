@@ -1,8 +1,8 @@
-import EducationInfo from "./EducationInfo";
-import EducationTable from "./EducationTable";
-
 import { Container, Typography } from "@mui/material";
 import { styled } from "@mui/system";
+
+import EducationInfo from "./EducationInfo";
+import EducationTable from "./EducationTable";
 
 const Education = () => {
   return (

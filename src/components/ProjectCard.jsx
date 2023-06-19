@@ -1,8 +1,8 @@
-import LinkButton from "./LinkButton";
-import { skillIcons, infoIcons } from "../data/IconsData";
-
 import { Box, Card, CardContent, Divider, Typography } from "@mui/material";
 import { styled } from "@mui/system";
+
+import LinkButton from "./LinkButton";
+import { skillIcons, infoIcons } from "../data/IconsData";
 
 const ProjectCard = ({ project }) => {
   const { completedOn, projectName, description, technologies, githubLink, demoLink } = project;

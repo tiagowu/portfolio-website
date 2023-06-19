@@ -1,9 +1,9 @@
+import { Box, Container, Typography } from "@mui/material";
+import { styled } from "@mui/system";
+
 import ContactBox from "./ContactBox";
 import ContactForm from "./ContactForm";
 import { infoIcons } from "../data/IconsData";
-
-import { Box, Container, Typography } from "@mui/material";
-import { styled } from "@mui/system";
 
 const contactInfo = [
   { label: "Email", content: "tiagowu12@gmail.com", icon: infoIcons.email },

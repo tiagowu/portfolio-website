@@ -1,7 +1,7 @@
-import { ReactComponent as SBULogo } from "../assets/SBULogo.svg";
-
 import { Box, Typography } from "@mui/material";
 import { styled } from "@mui/system";
+
+import { ReactComponent as SBULogo } from "../assets/SBULogo.svg";
 
 const EducationInfo = () => {
   return (

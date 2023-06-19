@@ -1,7 +1,7 @@
-import { aboutData } from "../data/AboutData";
-
 import { Box, Container, Typography } from "@mui/material";
 import { styled } from "@mui/system";
+
+import { aboutData } from "../data/AboutData";
 
 const About = () => {
   return (

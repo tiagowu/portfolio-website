@@ -1,8 +1,8 @@
-import ProjectCard from "./ProjectCard";
-import { projectsData } from "../data/ProjectsData";
-
 import { Container, Grid, Typography } from "@mui/material";
 import { styled } from "@mui/system";
+
+import ProjectCard from "./ProjectCard";
+import { projectsData } from "../data/ProjectsData";
 
 const Projects = () => {
   const reversedProjectsData = [...projectsData].reverse();

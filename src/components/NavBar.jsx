@@ -1,11 +1,12 @@
 import { useState, useEffect } from "react";
-import NavButtons from "./NavButtons";
-import NavDrawer from "./NavDrawer";
-import { ReactComponent as Logo } from "../assets/Logo.svg";
 
 import { AppBar, Box, IconButton, Toolbar, useMediaQuery, useTheme } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import { styled } from "@mui/system";
+
+import NavButtons from "./NavButtons";
+import NavDrawer from "./NavDrawer";
+import { ReactComponent as Logo } from "../assets/Logo.svg";
 
 const NavBar = () => {
   useEffect(() => {

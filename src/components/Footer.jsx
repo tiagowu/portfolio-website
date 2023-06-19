@@ -1,7 +1,7 @@
-import NavButtons from "./NavButtons";
-
 import { Container, Typography } from "@mui/material";
 import { styled } from "@mui/system";
+
+import NavButtons from "./NavButtons";
 
 const Footer = () => {
   const navigations = [

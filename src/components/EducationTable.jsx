@@ -1,7 +1,7 @@
-import { coursesData } from "../data/CoursesData";
-
 import { Container, Table, TableBody, TableCell, TableHead, TableRow } from "@mui/material";
 import { styled } from "@mui/system";
+
+import { coursesData } from "../data/CoursesData";
 
 const EducationTable = () => {
   const sortedCoursesData = [...coursesData].reverse().sort((a, b) => (a.completed === b.completed ? 0 : a.completed ? 1 : -1));

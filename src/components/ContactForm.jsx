@@ -1,10 +1,10 @@
 import { useState } from "react";
-import { SERVICE_ID, TEMPLATE_ID, PUBLIC_KEY } from "../config";
+import emailjs from "emailjs-com";
 
 import { Box, Button, TextField, Typography } from "@mui/material";
 import { styled } from "@mui/system";
 
-import emailjs from "emailjs-com";
+import { SERVICE_ID, TEMPLATE_ID, PUBLIC_KEY } from "../config";
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
