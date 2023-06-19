@@ -23,18 +23,18 @@ const AboutContainer = styled(Container)({
   width: "100%",
 });
 
-const AboutTitle = styled(Typography)({
+const AboutTitle = styled(Typography)(({ theme }) => ({
   textAlign: "center",
-  paddingBottom: 32,
-  paddingTop: 72,
-});
+  paddingBottom: theme.spacing(4),
+  paddingTop: theme.spacing(9),
+}));
 
-const AboutContentBox = styled(Box)({
+const AboutContentBox = styled(Box)(({ theme }) => ({
   display: "flex",
   flexDirection: "column",
   margin: "auto",
   maxWidth: 720,
-  gap: 16,
-});
+  gap: theme.spacing(2),
+}));
 
 export default About;

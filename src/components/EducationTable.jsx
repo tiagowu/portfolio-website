@@ -49,7 +49,6 @@ const EducationTableContainer = styled(Container)(({ theme }) => ({
 const EducationTableWrapper = styled(Table)({
   margin: "auto",
   maxWidth: 1000,
-
   "& tbody tr:last-child td": {
     borderBottom: "none",
   },

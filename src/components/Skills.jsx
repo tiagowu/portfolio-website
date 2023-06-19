@@ -37,23 +37,23 @@ const SkillsContainer = styled(Container)({
   width: "100%",
 });
 
-const SkillsTitle = styled(Typography)({
+const SkillsTitle = styled(Typography)(({ theme }) => ({
   textAlign: "center",
-  paddingBottom: 32,
-  paddingTop: 72,
-});
+  paddingBottom: theme.spacing(4),
+  paddingTop: theme.spacing(9),
+}));
 
-const SkillsSectionGridContainer = styled(Grid)({
+const SkillsSectionGridContainer = styled(Grid)(({ theme }) => ({
   alignItems: "center",
   justifyContent: "center",
   maxWidth: 1000,
-  gap: 8,
-});
+  gap: theme.spacing(1),
+}));
 
-const SkillsSection = styled(Typography)({
+const SkillsSection = styled(Typography)(({ theme }) => ({
   textAlign: "center",
-  paddingBottom: 16,
-});
+  paddingBottom: theme.spacing(2),
+}));
 
 const SkillGridContainer = styled(Grid)(({ theme }) => ({
   alignItems: "center",

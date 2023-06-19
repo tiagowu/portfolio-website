@@ -16,7 +16,7 @@ const LinkIconButton = styled(IconButton)(({ theme }) => ({
   backgroundColor: theme.palette.primary.main,
   color: "white",
   borderRadius: 8,
-  padding: 4,
+  padding: theme.spacing(0.5),
 }));
 
 export default LinkButton;

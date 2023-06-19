@@ -64,31 +64,31 @@ const ProjectDateBox = styled(Box)({
 const ProjectDate = styled(Typography)(({ theme }) => ({
   backgroundColor: theme.palette.primary.main,
   borderRadius: 16,
-  padding: 8,
-  marginBottom: 8,
+  padding: theme.spacing(1),
+  marginBottom: theme.spacing(1),
 }));
 
-const ProjectTitle = styled(Typography)({
+const ProjectTitle = styled(Typography)(({ theme }) => ({
   textAlign: "center",
-  marginBottom: 16,
-});
+  marginBottom: theme.spacing(2),
+}));
 
 const ProjectDivider = styled(Divider)(({ theme }) => ({
   backgroundColor: theme.palette.primary.main,
 }));
 
-const ProjectDescription = styled(Typography)({
-  marginTop: 8,
-  marginBottom: 8,
-});
+const ProjectDescription = styled(Typography)(({ theme }) => ({
+  marginTop: theme.spacing(1),
+  marginBottom: theme.spacing(1),
+}));
 
-const ProjectTechnologies = styled(Box)({
+const ProjectTechnologies = styled(Box)(({ theme }) => ({
   display: "flex",
   flexDirection: "row",
   alignItems: "center",
   height: 48,
-  gap: 8,
-});
+  gap: theme.spacing(1),
+}));
 
 const ProjectIconBox = styled(Box)({
   display: "flex",
@@ -102,11 +102,11 @@ const ProjectCardFooter = styled(Box)({
   marginTop: "auto",
 });
 
-const ProjectActions = styled(Box)({
+const ProjectActions = styled(Box)(({ theme }) => ({
   display: "flex",
   flexDirection: "row",
   alignItems: "center",
-  gap: 8,
-});
+  gap: theme.spacing(1),
+}));
 
 export default ProjectCard;

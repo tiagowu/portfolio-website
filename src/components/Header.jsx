@@ -42,13 +42,13 @@ const Header = () => {
 };
 
 /* Styled Components */
-const HeaderContainer = styled(Container)({
+const HeaderContainer = styled(Container)(({ theme }) => ({
   display: "flex",
   alignItems: "center",
   minHeight: "100vh",
   maxWidth: "100%",
-  paddingTop: 72,
-});
+  paddingTop: theme.spacing(9),
+}));
 
 const HeaderContentBox = styled(Box)(({ theme }) => ({
   display: "flex",
@@ -66,10 +66,10 @@ const HeaderContentBox = styled(Box)(({ theme }) => ({
 
 const HeaderLogoBox = styled(Box)(({ theme }) => ({
   minWidth: 180,
-  paddingBottom: 16,
+  paddingBottom: theme.spacing(2),
   [theme.breakpoints.up("sm")]: {
     minWidth: 240,
-    paddingRight: 64,
+    paddingRight: theme.spacing(8),
     paddingBottom: 0,
   },
 }));
@@ -83,13 +83,13 @@ const HeaderSubtext = styled(Typography)({
   color: "lightgray",
 });
 
-const HeaderButtons = styled(Box)({
+const HeaderButtons = styled(Box)(({ theme }) => ({
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
   flexDirection: "row",
-  gap: "12px",
-  height: "48px",
-});
+  gap: theme.spacing(1),
+  height: 48,
+}));
 
 export default Header;

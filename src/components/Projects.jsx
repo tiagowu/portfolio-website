@@ -26,11 +26,11 @@ const ProjectsContainer = styled(Container)({
   width: "100%",
 });
 
-const ProjectsTitle = styled(Typography)({
+const ProjectsTitle = styled(Typography)(({ theme }) => ({
   textAlign: "center",
-  paddingBottom: 32,
-  paddingTop: 72,
-});
+  paddingBottom: theme.spacing(4),
+  paddingTop: theme.spacing(9),
+}));
 
 const ProjectGridContainer = styled(Grid)({
   justifyContent: "center",

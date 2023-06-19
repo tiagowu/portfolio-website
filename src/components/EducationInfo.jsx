@@ -22,7 +22,7 @@ const EducationInfoBox = styled(Box)(({ theme }) => ({
   flexDirection: "row",
   alignItems: "center",
   justifyContent: "center",
-  gap: "16px",
+  gap: theme.spacing(2),
   marginBottom: theme.spacing(2),
   [theme.breakpoints.down("sm")]: {
     flexDirection: "column",
