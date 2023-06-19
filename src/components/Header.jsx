@@ -14,7 +14,7 @@ const Header = () => {
   ];
 
   return (
-    <HeaderContainer maxWidth={false}>
+    <HeaderContainer>
       <NavBar />
       <HeaderContentBox>
         <HeaderLogoBox>
@@ -46,6 +46,7 @@ const HeaderContainer = styled(Container)({
   display: "flex",
   alignItems: "center",
   minHeight: "100vh",
+  maxWidth: "100%",
   paddingTop: 72,
 });
 
