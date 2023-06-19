@@ -5,10 +5,10 @@ export const skillsData = [
   },
   {
     section: "Frontend Development",
-    skills: ["Bootstrap", "CSS", "HTML", "MaterialUI", "ReactJS"],
+    skills: ["Bootstrap", "CSS", "HTML", "MaterialUI", "ReactJS", "Redux"],
   },
   {
     section: "Backend Development",
-    skills: ["Express", "MongoDB", "NodeJS"],
+    skills: ["Express", "Firebase", "MongoDB", "NodeJS"],
   },
 ];

@@ -19,6 +19,8 @@ export const skillIcons = {
   express: <Icon icon="skill-icons:expressjs-light" />,
   nodejs: <Icon icon="skill-icons:nodejs-light" />,
   python: <Icon icon="skill-icons:python-light" />,
+  firebase: <Icon icon="vscode-icons:file-type-firebase" />,
+  redux: <Icon icon="skill-icons:redux" />,
 };
 
 export const infoIcons = {
