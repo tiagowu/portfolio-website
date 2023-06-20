@@ -50,6 +50,6 @@ export const projectsData = [
     completedOn: "In Progress",
     technologies: ["CSS", "HTML", "Javascript"],
     githubLink: "https://github.com/tiagowu/portfolio-website",
-    demoLink: "",
+    demoLink: "https://tiagowu.com",
   },
 ];
