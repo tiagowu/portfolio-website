@@ -65,6 +65,26 @@ const customTheme = createTheme({
     primary: {
       main: "#3770B3",
     },
+    background: {
+      default: "#232830",
+    },
+  },
+  typography: {
+    fontFamily: [
+      "-apple-system",
+      "BlinkMacSystemFont",
+      '"Segoe UI"',
+      "Roboto",
+      "Oxygen",
+      "Ubuntu",
+      "Cantarell",
+      '"Fira Sans"',
+      '"Droid Sans"',
+      '"Helvetica Neue"',
+      "sans-serif",
+    ].join(","),
+    "-webkit-font-smoothing": "antialiased",
+    "-moz-osx-font-smoothing": "grayscale",
   },
 });
 
