@@ -47,7 +47,7 @@ export const projectsData = [
     projectName: "Portfolio Website",
     description:
       "A portfolio website that aims to offer the world an in-depth understanding of my background, accomplishments, and expertise by showcasing a collection of my experiences, projects, and skills.",
-    completedOn: "In Progress",
+    completedOn: "June 2023",
     technologies: ["CSS", "HTML", "Javascript"],
     githubLink: "https://github.com/tiagowu/portfolio-website",
     demoLink: "https://tiagowu.com",
