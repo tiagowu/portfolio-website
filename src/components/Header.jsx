@@ -89,6 +89,7 @@ const HeaderButtons = styled(Box)(({ theme }) => ({
   alignItems: "center",
   flexDirection: "row",
   gap: theme.spacing(1),
+  paddingTop: theme.spacing(1),
   height: 48,
 }));
 
