@@ -54,7 +54,7 @@ const ContactForm = () => {
   return (
     <ContactFormContainer>
       <Typography variant="h5">Contact Me</Typography>
-      <form onSubmit={handleFormSubmit}>
+      <form id="contact-form" onSubmit={handleFormSubmit}>
         <ContactFormInput label="Name" margin="normal" name="name" value={name} onChange={handleChange} autoComplete="new-password" required />
         <ContactFormInput label="Email" margin="normal" name="email" value={email} onChange={handleChange} autoComplete="new-password" required />
         <ContactFormInput label="Message" margin="normal" name="message" value={message} onChange={handleChange} multiline rows={4} required />
@@ -70,6 +70,7 @@ const ContactForm = () => {
 /* Styled Components */
 const ContactFormContainer = styled(Box)({
   textAlign: "center",
+  width: "100%",
 });
 
 const ContactFormInput = styled(TextField)(({ theme }) => ({
