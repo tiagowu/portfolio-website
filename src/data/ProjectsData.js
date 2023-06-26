@@ -29,7 +29,7 @@ export const projectsData = [
     projectName: "TransforMatrix",
     description:
       "A matrix manipulator that extracts data from a txt file, performs transformative operations on the two-dimensional array, and writes the modified contents to an output file.",
-    completedOn: "Aug 2022",
+    completedOn: "Oct 2022",
     technologies: ["MIPS"],
     githubLink: "",
     demoLink: "",
