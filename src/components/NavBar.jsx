@@ -72,6 +72,7 @@ const NavBar = () => {
 const NavAppBar = styled(AppBar)({
   position: "fixed",
   backgroundColor: "#242933",
+  opacity: 0.9,
 });
 
 const NavToolbar = styled(Toolbar)(({ theme }) => ({
