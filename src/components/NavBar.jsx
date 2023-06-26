@@ -37,6 +37,7 @@ const NavBar = () => {
       window.history.pushState(null, "", url);
       element.scrollIntoView({ behavior: "smooth" });
     } else {
+      window.history.pushState(null, "", "/");
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
   };
