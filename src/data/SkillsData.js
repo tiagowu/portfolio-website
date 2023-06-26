@@ -9,6 +9,6 @@ export const skillsData = [
   },
   {
     section: "Backend Development",
-    skills: ["Express", "Firebase", "MongoDB", "NodeJS"],
+    skills: ["Express", "Firebase", "MongoDB", "NodeJS", "Postman"],
   },
 ];
