@@ -10,7 +10,7 @@ const Header = () => {
   const buttonsInfo = [
     { link: "https://www.github.com/tiagowu", icon: infoIcons.github },
     { link: "https://www.linkedin.com/in/tiago-wu/", icon: infoIcons.linkedin },
-    { link: "https://www.linkedin.com/in/tiago-wu/", icon: infoIcons.resume },
+    { link: "Resume.pdf", icon: infoIcons.resume },
   ];
 
   return (
