@@ -52,4 +52,13 @@ export const projectsData = [
     githubLink: "https://github.com/tiagowu/portfolio-website",
     demoLink: "https://tiagowu.com",
   },
+  {
+    projectName: "Teamify",
+    description:
+      "A team management application that simplifies project coordination, optimizes task assignment, and fosters seamless communication among team members. ",
+    completedOn: "In Progress",
+    technologies: ["NodeJS", "Express", "MongoDB"],
+    githubLink: "https://github.com/tiagowu/teamify",
+    demoLink: "",
+  },
 ];
