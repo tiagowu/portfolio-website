@@ -1,4 +1,4 @@
-import Container from "@mui/material/Container";
+import Box from "@mui/material/Box";
 import { styled } from "@mui/system";
 
 import Header from "./components/Header";
@@ -24,8 +24,9 @@ const App = () => {
 };
 
 /* Styled Components */
-const AppContainer = styled(Container)(({ theme }) => ({
+const AppContainer = styled(Box)(({ theme }) => ({
   minWidth: 320,
+  width: "100%",
   margin: 0,
   padding: 0,
   fontFamily: theme.typography.fontFamily,
