@@ -6,22 +6,22 @@ import ResumeIcon from "@mui/icons-material/Description";
 import DemoIcon from "@mui/icons-material/OpenInNew";
 
 export const skillIcons = {
+  bootstrap: <Icon icon="skill-icons:bootstrap" />,
   c: <Icon icon="skill-icons:c" />,
   css: <Icon icon="skill-icons:css" />,
+  express: <Icon icon="skill-icons:expressjs-light" />,
+  firebase: <Icon icon="vscode-icons:file-type-firebase" />,
   html: <Icon icon="skill-icons:html" />,
   java: <Icon icon="skill-icons:java-light" />,
   javascript: <Icon icon="skill-icons:javascript" />,
-  node: <Icon icon="skill-icons:nodejs" />,
-  mongodb: <Icon icon="skill-icons:mongodb" />,
-  bootstrap: <Icon icon="skill-icons:bootstrap" />,
   materialui: <Icon icon="skill-icons:materialui-light" />,
-  reactjs: <Icon icon="skill-icons:react-light" />,
-  express: <Icon icon="skill-icons:expressjs-light" />,
+  mongodb: <Icon icon="skill-icons:mongodb" />,
   nodejs: <Icon icon="skill-icons:nodejs-light" />,
-  python: <Icon icon="skill-icons:python-light" />,
-  firebase: <Icon icon="vscode-icons:file-type-firebase" />,
-  redux: <Icon icon="skill-icons:redux" />,
   postman: <Icon icon="skill-icons:postman" />,
+  python: <Icon icon="skill-icons:python-light" />,
+  reactjs: <Icon icon="skill-icons:react-light" />,
+  redux: <Icon icon="skill-icons:redux" />,
+  tailwind: <Icon icon="skill-icons:tailwindcss-light" />,
 };
 
 export const infoIcons = {
