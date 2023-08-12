@@ -21,7 +21,7 @@ export const projectsData = [
     description:
       "A minimalist weather application that enables users to view the weather of their current geolocation as well as any other location in the world.",
     completedOn: "Aug 2022",
-    technologies: ["CSS", "HTML", "JavaScript"],
+    technologies: ["CSS", "HTML", "Javascript", "ReactJS"],
     githubLink: "https://github.com/tiagowu/weather-app",
     demoLink: "https://tiagowu.github.io/weather-app",
   },
@@ -48,7 +48,7 @@ export const projectsData = [
     description:
       "A portfolio website that aims to offer the world an in-depth understanding of my background, accomplishments, and expertise by showcasing a collection of my experiences, projects, and skills.",
     completedOn: "June 2023",
-    technologies: ["CSS", "HTML", "Javascript"],
+    technologies: ["CSS", "HTML", "Javascript", "ReactJS"],
     githubLink: "https://github.com/tiagowu/portfolio-website",
     demoLink: "https://tiagowu.com",
   },
@@ -56,9 +56,9 @@ export const projectsData = [
     projectName: "Teamify",
     description:
       "A team management application that simplifies project coordination, optimizes task assignment, and fosters seamless communication among team members. ",
-    completedOn: "In Progress",
-    technologies: ["NodeJS", "Express", "MongoDB"],
+    completedOn: "Aug 2023",
+    technologies: ["MongoDB", "Express", "ReactJS", "NodeJS", "Tailwind"],
     githubLink: "https://github.com/tiagowu/teamify",
-    demoLink: "",
+    demoLink: "https://www.teamify.tiagowu.com",
   },
 ];
