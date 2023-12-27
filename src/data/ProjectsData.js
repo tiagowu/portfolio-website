@@ -61,4 +61,13 @@ export const projectsData = [
     githubLink: "https://github.com/tiagowu/teamify",
     demoLink: "https://www.teamify.tiagowu.com",
   },
+  {
+    projectName: "Text Overflow",
+    description:
+      "A Stack Overflow clone where developers and programmers can ask and answer questions, share knowledge, and collaborate on coding challenges.",
+    completedOn: "Dec 2023",
+    technologies: ["MongoDB", "Express", "ReactJS", "NodeJS"],
+    githubLink: "",
+    demoLink: "",
+  },
 ];
