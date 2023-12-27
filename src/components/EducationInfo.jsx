@@ -11,7 +11,7 @@ const EducationInfo = () => {
         <Typography variant="h6">Stony Brook University</Typography>
         <Typography variant="h6">Computer Science, B.S.</Typography>
         <Typography variant="h6">Exp. Grad: May 2024</Typography>
-        <Typography variant="h6">Cumulative GPA: 3.83</Typography>
+        <Typography variant="h6">Cumulative GPA: 3.8</Typography>
       </EducationTextBox>
     </EducationInfoBox>
   );
