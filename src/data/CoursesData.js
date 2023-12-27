@@ -24,6 +24,12 @@ export const coursesData = [
     completed: true,
   },
   {
+    courseNumber: "CSE 300",
+    courseName: "Technical Communications",
+    instructor: "Patricia Medved",
+    completed: false,
+  },
+  {
     courseNumber: "CSE 303",
     courseName: "Introduction to the Theory of Computation",
     instructor: "Anita Wasilewska",
@@ -33,13 +39,13 @@ export const coursesData = [
     courseNumber: "CSE 304",
     courseName: "Compiler Design",
     instructor: "Christopher Kane",
-    completed: false,
+    completed: true,
   },
   {
     courseNumber: "CSE 310",
     courseName: "Computer Networks",
     instructor: "Jalaa Hoblos",
-    completed: false,
+    completed: true,
   },
   {
     courseNumber: "CSE 312",
@@ -51,7 +57,7 @@ export const coursesData = [
     courseNumber: "CSE 316",
     courseName: "Fundamentals of Software Development",
     instructor: "Christopher Kane",
-    completed: false,
+    completed: true,
   },
   {
     courseNumber: "CSE 320",
@@ -63,6 +69,18 @@ export const coursesData = [
     courseNumber: "CSE 331",
     courseName: "Computer Security Fundamentals",
     instructor: "Omar Chowdhury",
+    completed: true,
+  },
+  {
+    courseNumber: "CSE 351",
+    courseName: "Introduction to Data Science",
+    instructor: "Praveen Tripathi",
+    completed: false,
+  },
+  {
+    courseNumber: "CSE 361",
+    courseName: "Web Security",
+    instructor: "Nikolaos Nikiforakis",
     completed: false,
   },
   {
@@ -70,5 +88,11 @@ export const coursesData = [
     courseName: "Analysis of Algorithms",
     instructor: "Rezaul Chowdhury",
     completed: true,
+  },
+  {
+    courseNumber: "CSE 416",
+    courseName: "Software Engineering",
+    instructor: "Shuai Mu",
+    completed: false,
   },
 ];
