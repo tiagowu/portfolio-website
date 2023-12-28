@@ -67,7 +67,7 @@ export const projectsData = [
       "A Stack Overflow clone where developers and programmers can ask and answer questions, share knowledge, and collaborate on coding challenges.",
     completedOn: "Dec 2023",
     technologies: ["MongoDB", "Express", "ReactJS", "NodeJS"],
-    githubLink: "",
-    demoLink: "",
+    githubLink: "https://github.com/tiagowu/text-overflow",
+    demoLink: "https://www.textoverflow.tiagowu.com",
   },
 ];
