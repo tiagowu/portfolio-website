@@ -11,6 +11,7 @@ export const skillIcons = {
   css: <Icon icon="skill-icons:css" />,
   express: <Icon icon="skill-icons:expressjs-light" />,
   firebase: <Icon icon="vscode-icons:file-type-firebase" />,
+  go: <Icon icon="skill-icons:golang" />,
   html: <Icon icon="skill-icons:html" />,
   java: <Icon icon="skill-icons:java-light" />,
   javascript: <Icon icon="skill-icons:javascript" />,
