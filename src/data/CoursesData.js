@@ -27,7 +27,7 @@ export const coursesData = [
     courseNumber: "CSE 300",
     courseName: "Technical Communications",
     instructor: "Patricia Medved",
-    completed: false,
+    completed: true,
   },
   {
     courseNumber: "CSE 303",
@@ -75,13 +75,13 @@ export const coursesData = [
     courseNumber: "CSE 351",
     courseName: "Introduction to Data Science",
     instructor: "Praveen Tripathi",
-    completed: false,
+    completed: true,
   },
   {
     courseNumber: "CSE 361",
     courseName: "Web Security",
-    instructor: "Nikolaos Nikiforakis",
-    completed: false,
+    instructor: "Nick Nikiforakis",
+    completed: true,
   },
   {
     courseNumber: "CSE 373",
@@ -93,6 +93,6 @@ export const coursesData = [
     courseNumber: "CSE 416",
     courseName: "Software Engineering",
     instructor: "Shuai Mu",
-    completed: false,
+    completed: true,
   },
 ];
