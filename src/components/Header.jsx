@@ -28,7 +28,7 @@ const Header = () => {
             I am Tiago Wu.
           </Typography>
           <HeaderSubtext variant="h6">
-            Third-year Computer Science student at Stony Brook University seeking a career in software development.
+            Recent Computer Science graduate from Stony Brook University seeking a career in software development.
           </HeaderSubtext>
           <HeaderButtons>
             {buttonsInfo.map((button, index) => (
