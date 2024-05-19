@@ -15,7 +15,7 @@ const Footer = () => {
   return (
     <FooterContainer id="footer">
       <NavButtons navigations={navigations} />
-      <Typography variant="body1">©2023 Tiago Wu</Typography>
+      <Typography variant="body1">©2024 Tiago Wu</Typography>
     </FooterContainer>
   );
 };
