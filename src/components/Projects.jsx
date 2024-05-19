@@ -9,7 +9,7 @@ const Projects = () => {
 
   return (
     <ProjectsContainer id="projects">
-      <ProjectsTitle variant="h4">Project</ProjectsTitle>
+      <ProjectsTitle variant="h4">Projects</ProjectsTitle>
       <ProjectGridContainer container spacing={4}>
         {reversedProjectsData.map((project, index) => (
           <Grid item key={index}>
